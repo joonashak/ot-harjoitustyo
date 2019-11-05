@@ -1,0 +1,87 @@
+commit c1fe3b632e46ee9144d2fef2d7e7708a05273e4b
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:29:13 2019 +0200
+
+    asd
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2e33074b0c1b319b5dce366064b70089085ed386
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:28:32 2019 +0200
+
+    asd
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 6e8a5cd0b062563ed6b3d66546f7fbc3b7cee8b0
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:26:04 2019 +0200
+
+    asdasd
+
+ eka.txt    | 3 ++-
+ kolmas.txt | 3 +++
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+commit 0e7cd6a91c80d229415a4736cef5c585625abaec
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:24:39 2019 +0200
+
+    asd
+
+ tiedosto.txt => eka.txt | 0
+ toinen.txt              | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d9a997aefa67d52b723e7e1efabb2f56b08bd6fd
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:18:20 2019 +0200
+
+    tekstiä
+
+ tiedosto.txt | 22 +++++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
+
+commit 8622ba27f75b1a240c9867faff277d9ff198dae4
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:17:31 2019 +0200
+
+    lisää
+
+ stuff/jokintiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6bdfa7b03ff6d53b0c544276f2498cb488d5fccb
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:16:16 2019 +0200
+
+    kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e51f17744a1f3b52a7349ba7994cae52c65c993d
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:15:56 2019 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 2 ++
+ toinen.txt   | 0
+ 2 files changed, 2 insertions(+)
+
+commit 4f204fb61b9d2bda7f4df6ef947264297e86adf2
+Author: Joonas Häkkinen <joonas@joonashakkinen.fi>
+Date:   Tue Nov 5 20:15:02 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
