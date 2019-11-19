@@ -29,14 +29,6 @@ public class Card {
         return isRemoved;
     }
 
-    public Integer getCode() {
-        return code;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;

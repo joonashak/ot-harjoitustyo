@@ -25,7 +25,17 @@ public class CardTest {
     }
 
     @Test
-    public void initializedOk() {
+    public void idOk() {
         assertEquals(1, card.id);
+    }
+    
+    @Test
+    public void codeOk() {
+        assertEquals(99, card.code);
+    }
+    
+    @Test
+    public void notRemoved() {
+        assertTrue(!card.isRemoved());
     }
 }
