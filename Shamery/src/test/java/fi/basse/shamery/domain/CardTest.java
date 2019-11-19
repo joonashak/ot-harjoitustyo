@@ -5,22 +5,22 @@
  */
 package fi.basse.shamery.domain;
 
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
  * @author joonas
  */
 public class CardTest {
-    static Card card;
+    Card card;
     
     public CardTest() {
     }
     
-    @BeforeClass
-    static public void setUp() {
+    @Before
+    public void setUp() {
         card = new Card(1, 99);
     }
 
@@ -37,5 +37,18 @@ public class CardTest {
     @Test
     public void notRemoved() {
         assertTrue(!card.isRemoved());
+    }
+    
+    @Test
+    public void matchesOk() {
+        Card card2 = new Card(1, 999);
+        assertTrue(card.matches(card));
+        assertTrue(!card.matches(card2));
+    }
+    
+    @Test
+    public void removeOk() {
+        card.remove();
+        assertTrue(card.isRemoved());
     }
 }
