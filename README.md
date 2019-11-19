@@ -1,10 +1,13 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Shamery
 
-## Tehtävät
+> *N.B.: This app is part of my university course work.*
 
-### Viikko 1
+Shamery is a concentration-type game where the players try to match up two shapes that go inside one another.
 
-[gitlog.txt](laskarit/viikko1/gitlog.txt)
+## Documentation
 
-[komentorivi.txt](laskarit/viikko1/komentorivi.txt)
+[Requirements Specification](docs/requirements.md)
 
+[Rules](docs/rules.md)
+
+[Työaikakirjanpito](docs/tuntikirjanpito.md) (hour tracking, in Finnish)
