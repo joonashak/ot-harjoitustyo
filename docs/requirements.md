@@ -28,3 +28,4 @@ The game is local and has no authentication. New users can be added to keep trac
 - Custom cards.
 - More game modes.
 - Different rulesets.
+- Game can be saved and resumed.

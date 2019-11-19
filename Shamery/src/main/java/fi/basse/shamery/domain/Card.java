@@ -9,7 +9,7 @@ import java.util.Objects;
  * @author joonas
  */
 public class Card {
-    private Integer code, id;
+    int code, id;
     private boolean isRemoved = false;
 
     public Card(Integer id, Integer code) {
@@ -21,12 +21,20 @@ public class Card {
         return Objects.equals(this.code, other.code);
     }
 
+    public void remove() {
+        this.isRemoved = true;
+    }
+
     public boolean isRemoved() {
         return isRemoved;
     }
 
-    public void remove() {
-        this.isRemoved = true;
+    public Integer getCode() {
+        return code;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     @Override
