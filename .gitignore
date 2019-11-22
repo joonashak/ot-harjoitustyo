@@ -10,3 +10,8 @@
 nbactions.xml
 
 /Shamery/nbproject/
+.classpath
+.project
+.settings
+.vscode
+

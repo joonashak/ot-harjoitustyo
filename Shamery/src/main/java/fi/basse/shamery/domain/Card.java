@@ -12,15 +12,28 @@ public class Card {
     int code, id;
     private boolean isRemoved = false;
 
+    /**
+     * Construct a new Card.
+     * @param id card id
+     * @param code type code for matching up pairs
+     */
     public Card(int id, int code) {
         this.id = id;
         this.code = code;
     }
     
+    /**
+     * Check if this Card matches other.
+     * @param other Card to check
+     * @return true if both card have the same type code.
+     */
     public boolean matches(Card other) {
         return Objects.equals(this.code, other.code);
     }
 
+    /**
+     * Mark this Card as removed from the game.
+     */
     public void remove() {
         this.isRemoved = true;
     }
