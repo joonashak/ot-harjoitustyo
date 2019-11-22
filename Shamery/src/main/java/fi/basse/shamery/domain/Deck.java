@@ -13,12 +13,17 @@ public class Deck {
     /**
      * Construct a new Deck of given size.
      * The deck will be populated with random cards.
-     * @param size number of Cards to include. <b>Must be even!</b>
+     * @param size number of Cards to include.
      */
     public Deck(int size) {
+        // Make sure size is even and between 2-64.
+        size += size % 2;
+        size = Math.min(64, Math.max(2, size));
+
         // Generate a deck of the given size.
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i = i + 2) {
             cards.add(new Card(i, 1));
+            cards.add(new Card(i + 1, 1));
         }
     }
 

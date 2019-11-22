@@ -1,5 +1,7 @@
 package fi.basse.shamery.ui;
 
+import fi.basse.shamery.domain.Card;
+import fi.basse.shamery.domain.Game;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
@@ -13,9 +15,14 @@ public class Board {
     }
 
     public Scene getScene() {
-        Label label = new Label("teeeest");
+        Game game = new Game();
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(label);
+
+        for (Card card : game.getDeck().getCards()) {
+            Label label = new Label("" + card.getId());
+            vbox.getChildren().addAll(label);
+        }
+
         return new Scene(vbox, 800, 600);
     }
 }
