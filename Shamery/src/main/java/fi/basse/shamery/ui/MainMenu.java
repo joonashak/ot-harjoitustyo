@@ -15,7 +15,10 @@ public class MainMenu {
 
     public Scene getScene() {
         Button newGameButton = new Button("New Game");
-        newGameButton.setOnAction(e -> System.out.println("new game pressed"));
+        newGameButton.setOnAction(e -> {
+            Board board = new Board(primaryStage);
+            primaryStage.setScene(board.getScene());
+        });
 
         Button exitButton = new Button("Close");
         exitButton.setOnAction(e -> {
