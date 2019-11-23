@@ -10,16 +10,19 @@ import java.util.Objects;
  */
 public class Card {
     int code, id;
+    String name;
     private boolean isRemoved = false;
 
     /**
      * Construct a new Card.
      * @param id card id
      * @param code type code for matching up pairs
+     * @param name used to find the icon for this Card
      */
-    public Card(int id, int code) {
+    public Card(int id, int code, String name) {
         this.id = id;
         this.code = code;
+        this.name = name;
     }
     
     /**
@@ -56,5 +59,27 @@ public class Card {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder()
+            .append("Card - id: ")
+            .append(id)
+            .append(", code: ")
+            .append(code)
+            .append(", name: ")
+            .append(name)
+            .append(", removed: ")
+            .append(isRemoved)
+            .toString();
     }
 }
