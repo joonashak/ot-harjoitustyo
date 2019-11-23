@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fi.basse.shamery.domain;
 
 import org.junit.Test;
@@ -11,27 +6,26 @@ import org.junit.Before;
 
 /**
  *
- * @author joonas
+ * @author Joonas Häkkinen
  */
 public class CardTest {
     Card card;
     
-    public CardTest() {
-    }
-    
     @Before
     public void setUp() {
-        card = new Card(1, 99);
+        card = new Card(1, 99, "asd");
     }
 
     @Test
     public void idOk() {
-        assertEquals(1, card.id);
+        card.setId(900);
+        assertEquals(900, card.getId());
     }
     
     @Test
     public void codeOk() {
-        assertEquals(99, card.code);
+        card.setCode(98);
+        assertEquals(98, card.getCode());
     }
     
     @Test
@@ -41,7 +35,7 @@ public class CardTest {
     
     @Test
     public void matchesOk() {
-        Card card2 = new Card(1, 999);
+        Card card2 = new Card(1, 999, "asd");
         assertTrue(card.matches(card));
         assertTrue(!card.matches(card2));
     }
@@ -50,5 +44,16 @@ public class CardTest {
     public void removeOk() {
         card.remove();
         assertTrue(card.isRemoved());
+    }
+
+    @Test
+    public void nameOk() {
+        card.setName("abc");
+        assertEquals("abc", card.getName());
+    }
+
+    @Test
+    public void stringOk() {
+        assertEquals("Card - id: 1, code: 99, name: asd, removed: false", card.toString());
     }
 }

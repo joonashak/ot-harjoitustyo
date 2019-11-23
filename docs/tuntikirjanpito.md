@@ -6,4 +6,6 @@ Päivä|Aika (h)|Mitä tein?
 19.11.|2|Aiheen keksiminen, dokumentaation kirjoittaminen.
  |4|Projektin konfigurointi, koodauksen aloittaminen.
 22.11.|2|GUI:n suunnittelu ja koodaus, checkstylen käyttöönotto.
-**YHT.**|9|
+ |2|Yleinen koodaus.
+23.11.|4|Koodaus ja testit.
+**YHT.**|15|
