@@ -21,9 +21,11 @@ public class Deck {
         size = Math.min(64, Math.max(2, size));
 
         // Generate a deck of the given size.
+        CardPairs cardPairs = new CardPairs();
         for (int i = 0; i < size; i = i + 2) {
-            cards.add(new Card(i, 1));
-            cards.add(new Card(i + 1, 1));
+            List<Card> pair = cardPairs.next(i);
+            cards.add(pair.get(0));
+            cards.add(pair.get(1));
         }
     }
 
