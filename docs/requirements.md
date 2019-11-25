@@ -29,3 +29,4 @@ The game is local and has no authentication. New users can be added to keep trac
 - More game modes.
 - Different rulesets.
 - Game can be saved and resumed.
+- Multiplayer: tally up scores of consecutive games as a series.
