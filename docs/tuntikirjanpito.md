@@ -8,4 +8,5 @@ Päivä|Aika (h)|Mitä tein?
 22.11.|2|GUI:n suunnittelu ja koodaus, checkstylen käyttöönotto.
  |2|Yleinen koodaus.
 23.11.|4|Koodaus ja testit.
+25.11.|
 **YHT.**|15|
