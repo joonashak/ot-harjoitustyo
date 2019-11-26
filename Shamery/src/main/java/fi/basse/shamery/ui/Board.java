@@ -24,7 +24,7 @@ public class Board {
         GridPane cardGrid = new GridPane();
 
         for (Card card : game.getDeck().getCards()) {
-            Button button = new Button("" + card.getId());
+            Button button = new CardButton(card);
             button.setMinHeight(100);
             button.setMinWidth(60);
             cardGrid.add(button, x, y);
