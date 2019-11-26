@@ -13,13 +13,15 @@ import javafx.scene.control.Button;
  */
 public class CardButton extends Button {
     private Card card;
+    private Board board;
 
     /**
      * Generate a new CardButton.
      * @param card the Card object this element represents in the UI.
      */
-    public CardButton(Card card) {
+    public CardButton(Card card, Board board) {
         this.card = card;
+        this.board = board;
         setOnAction(onClick());
     }
 
@@ -27,7 +29,7 @@ public class CardButton extends Button {
         return new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                reveal();
+                board.reveal(card);
             }
         };
     }
@@ -44,5 +46,15 @@ public class CardButton extends Button {
      */
     public void hide() {
         setText("");
+    }
+
+    public void update() {
+        if (card.isRemoved()) {
+            setText("removed");
+        } else if (card.isRevealed()) {
+            setText("" + card.getCode());
+        } else {
+            setText("");
+        }
     }
 }

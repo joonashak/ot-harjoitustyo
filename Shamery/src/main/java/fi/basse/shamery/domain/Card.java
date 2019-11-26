@@ -9,9 +9,9 @@ import java.util.Objects;
  * @author joonas
  */
 public class Card {
-    int code, id;
-    String name;
-    private boolean isRemoved = false;
+    private int code, id;
+    private String name;
+    private boolean isRemoved, isRevealed;
 
     /**
      * Construct a new Card.
@@ -23,6 +23,8 @@ public class Card {
         this.id = id;
         this.code = code;
         this.name = name;
+        this.isRemoved = false;
+        this.isRevealed = false;
     }
     
     /**
@@ -43,6 +45,10 @@ public class Card {
 
     public boolean isRemoved() {
         return isRemoved;
+    }
+
+    public void setRemoved(boolean isRemoved) {
+        this.isRemoved = isRemoved;
     }
 
     public int getCode() {
@@ -67,6 +73,14 @@ public class Card {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isRevealed() {
+        return isRevealed;
+    }
+
+    public void setRevealed(boolean isRevealed) {
+        this.isRevealed = isRevealed;
     }
 
     @Override

@@ -3,6 +3,7 @@ package fi.basse.shamery.domain;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Deck is a collection of Cards.
@@ -30,6 +31,16 @@ public class Deck {
         }
 
         Collections.shuffle(cards);
+    }
+
+    /**
+     * List of Cards that are currently revealed.
+     * @return revealed cards as List<Card>.
+     */
+    public List<Card> getOpenCards() {
+        return cards.stream()
+            .filter(c -> c.isRevealed())
+            .collect(Collectors.toList());
     }
 
     public List<Card> getCards() {

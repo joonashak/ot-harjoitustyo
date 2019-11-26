@@ -9,4 +9,5 @@ Päivä|Aika (h)|Mitä tein?
  |2|Yleinen koodaus.
 23.11.|4|Koodaus ja testit.
 25.11.|2|Dokumentaation ja sääntöjen kirjoitus.
-**YHT.**|15|
+26.11.|5|Checkstyle ja UI:n koodaus.
+**YHT.**|23|

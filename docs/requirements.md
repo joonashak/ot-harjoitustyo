@@ -11,12 +11,12 @@ The game is local and has no authentication. New users can be added to keep trac
 ## Main Features
 
 ### Menu
-- Start a new game.
+- Start a new game. **[DONE]**
 	- **Game modes:**
 		- Time trial (single/dual)
 		- Points (single/dual)
 - Browse highscores and past games.
-- Quit.
+- Quit. **[DONE]**
 
 ### In Game
 - Player(s) can play the game along [the rules](./rules.md).
