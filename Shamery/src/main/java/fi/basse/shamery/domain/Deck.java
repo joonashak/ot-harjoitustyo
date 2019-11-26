@@ -1,6 +1,7 @@
 package fi.basse.shamery.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -27,6 +28,8 @@ public class Deck {
             cards.add(pair.get(0));
             cards.add(pair.get(1));
         }
+
+        Collections.shuffle(cards);
     }
 
     public List<Card> getCards() {
