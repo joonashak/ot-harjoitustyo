@@ -18,6 +18,7 @@ public class CardButton extends Button {
     /**
      * Generate a new CardButton.
      * @param card the Card object this element represents in the UI.
+     * @param board the parent Board of this object.
      */
     public CardButton(Card card, Board board) {
         this.card = card;

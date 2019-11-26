@@ -22,7 +22,6 @@ public class Game {
      */
     public void reveal(Card card) {
         List<Card> openCards = deck.getOpenCards();
-        System.out.println("count="+openCards.size());
         // No cards are open.
         if (openCards.size() == 0) {
             card.setRevealed(true);
@@ -45,6 +44,9 @@ public class Game {
         
     }
 
+    /**
+     * Hide all cards in the deck.
+     */
     public void hideOpenCards() {
         for (Card c : deck.getOpenCards()) {
             c.setRevealed(false);
