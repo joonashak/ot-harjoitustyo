@@ -24,7 +24,7 @@ public class CardPairs {
             pairData = new Gson()
                 .fromJson(
                     new FileReader("src/main/resources/cardpairs.json"),
-                    new TypeToken<List<PairData>>() {}.getType()
+                    new TypeToken<List<PairData>>() { }.getType()
             );
         } catch (Exception e) {
             System.out.println("\n*** ERROR ***");
@@ -34,6 +34,11 @@ public class CardPairs {
         }
     }
 
+    /**
+     * Get the next card pair in line.
+     * @param id id for the first Card, other will have id+1 as id.
+     * @return List of two Cards.
+     */
     public List<Card> next(int id) {
         List<Card> res = new ArrayList<>();
         PairData pd = pairData.get(pointer);

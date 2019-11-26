@@ -6,6 +6,9 @@ package fi.basse.shamery.domain;
 public class Game {
     Deck deck;
 
+    /**
+     * Initialize a new Game. WIP.
+     */
     public Game() {
         this.deck = new Deck(16);
     }
