@@ -30,6 +30,15 @@ public class GameUi extends Application {
     }
 
     /**
+     * Show game set-up view.
+     * @param noPlayers number of players (1 or 2).
+     */
+    public void setUpGame(int noPlayers) {
+        GameSetup setup = new GameSetup(this, noPlayers);
+        setScene(setup.getScene());
+    }
+
+    /**
      * Start a new game.
      */
     public void newGame() {

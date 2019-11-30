@@ -21,11 +21,10 @@ public class MainMenu {
      */
     public Scene getScene() {
         Button newGameButton = new Button("Single Player");
-        newGameButton.setOnAction(e -> {
-            gameUi.newGame();
-        });
+        newGameButton.setOnAction(e -> gameUi.setUpGame(1));
 
         Button mpGameButton = new Button("Multiplayer");
+        mpGameButton.setOnAction(e -> gameUi.setUpGame(2));
 
         Button exitButton = new Button("Close");
         exitButton.setOnAction(e -> {
@@ -40,6 +39,6 @@ public class MainMenu {
         VBox vbox = new VBox(10);
         vbox.getChildren().addAll(newGameButton, mpGameButton, exitButton);
 
-        return new Scene(vbox);
+        return new Scene(vbox, 300, 200);
     }
 }
