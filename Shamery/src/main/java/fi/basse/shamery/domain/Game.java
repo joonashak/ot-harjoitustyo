@@ -7,12 +7,14 @@ import java.util.List;
  */
 public class Game {
     Deck deck;
+    Scoring scoring;
 
     /**
      * Initialize a new Game. WIP.
      */
     public Game() {
         this.deck = new Deck(18);
+        this.scoring = new Scoring();
     }
 
     /**
@@ -25,6 +27,7 @@ public class Game {
         // No cards are open.
         if (openCards.size() == 0) {
             card.setRevealed(true);
+            // TODO: scoring: turn start
             return;
         }
 
@@ -37,8 +40,10 @@ public class Game {
         if (openCards.get(0).getCode() == card.getCode()) {
             card.setRemoved(true);
             openCards.get(0).setRemoved(true);
+            // TODO: scoring: points, turn end
         } else {
             card.setRevealed(true);
+            // TODO: scoring turn end
         }
         
     }
@@ -54,5 +59,9 @@ public class Game {
 
     public Deck getDeck() {
         return deck;
+    }
+
+    public Scoring getScoring() {
+        return scoring;
     }
 }

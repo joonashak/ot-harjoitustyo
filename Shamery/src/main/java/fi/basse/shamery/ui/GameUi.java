@@ -1,11 +1,13 @@
 package fi.basse.shamery.ui;
 
+import fi.basse.shamery.domain.Game;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class GameUi extends Application {
-    Stage primaryStage;
+    private Stage primaryStage;
+    private Game game;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -34,6 +36,7 @@ public class GameUi extends Application {
      * @param noPlayers number of players (1 or 2).
      */
     public void setUpGame(int noPlayers) {
+        this.game = new Game();
         GameSetup setup = new GameSetup(this, noPlayers);
         setScene(setup.getScene());
     }
@@ -52,5 +55,9 @@ public class GameUi extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public Game getGame() {
+        return this.game;
     }
 }

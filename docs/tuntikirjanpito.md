@@ -10,5 +10,5 @@ Päivä|Aika (h)|Mitä tein?
 23.11.|4|Koodaus ja testit.
 25.11.|2|Dokumentaation ja sääntöjen kirjoitus.
 26.11.|5|Checkstyle ja UI:n koodaus.
-30.11.|3|Debuggaus ja UI:n koodaus.
-**YHT.**|26|
+30.11.|4|Debuggaus ja UI:n sekä pistelaskun koodaus.
+**YHT.**|27|
