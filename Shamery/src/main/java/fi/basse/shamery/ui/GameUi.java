@@ -18,7 +18,7 @@ public class GameUi extends Application {
     @Override
     public void stop() throws Exception {
         System.out.println("App Closing...");
-        super.stop();
+        primaryStage.close();
     }
 
     /**

@@ -1,6 +1,5 @@
 package fi.basse.shamery.ui;
 
-import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -34,9 +33,8 @@ public class MainMenu {
                 gameUi.stop();
             } catch (Exception ex) {
                 System.out.println(ex);
+                System.exit(1);
             }
-            Platform.exit();
-            System.exit(1);
         });
 
         VBox vbox = new VBox(10);
