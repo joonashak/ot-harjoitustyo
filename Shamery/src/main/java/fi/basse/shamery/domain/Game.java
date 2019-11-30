@@ -28,8 +28,8 @@ public class Game {
             return;
         }
 
-        // Two cards already open.
-        if (openCards.size() > 1) {
+        // Two cards already open or same card clicked twice in row.
+        if (openCards.size() > 1 || openCards.get(0).getId() == card.getId()) {
             return;
         }
         
