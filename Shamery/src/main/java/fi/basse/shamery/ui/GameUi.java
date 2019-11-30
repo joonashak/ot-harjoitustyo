@@ -30,6 +30,14 @@ public class GameUi extends Application {
     }
 
     /**
+     * Start a new game.
+     */
+    public void newGame() {
+        Board board = new Board();
+        setScene(board.getScene());
+    }
+
+    /**
      * Launch this application.
      * @param args CLI arguments.
      */
