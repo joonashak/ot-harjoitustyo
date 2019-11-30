@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class GameSetup {
@@ -26,7 +27,7 @@ public class GameSetup {
      * @return Scene
      */
     public Scene getScene() {
-        Label prompt = new Label("Enter your name:");
+        Label prompt = new Label("Enter your name...");
 
         // One or two input fields for names.
         GridPane nameGrid = new GridPane();
@@ -38,13 +39,22 @@ public class GameSetup {
             nameGrid.add(tf, 2, i);
         }
 
-        Button startButton = new Button("Start Game");
-        startButton.setOnAction(e -> {
+        // Buttons for each game type.
+        Button pointsGameButton = new Button("Points Game");
+        pointsGameButton.setOnAction(e -> {
             gameUi.newGame();
         });
 
+        Button timeTrialButton = new Button("Time Trial");
+        timeTrialButton.setOnAction(e -> {
+            gameUi.newGame();
+        });
+
+        HBox startButtons = new HBox(10);
+        startButtons.getChildren().addAll(pointsGameButton, timeTrialButton);
+
         VBox vbox = new VBox(10);
-        vbox.getChildren().addAll(prompt, nameGrid, startButton);
+        vbox.getChildren().addAll(prompt, nameGrid, startButtons);
 
         return new Scene(vbox, 300, 200);
     }
