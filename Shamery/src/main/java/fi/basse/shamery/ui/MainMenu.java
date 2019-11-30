@@ -4,17 +4,16 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class MainMenu {
-    Stage primaryStage;
+    GameUi gameUi;
 
     /**
      * Main menu and starting point of the application.
-     * @param primaryStage Stage for toggling Scene.
+     * @param gameUi GameUI instance.
      */
-    public MainMenu(Stage primaryStage) {
-        this.primaryStage = primaryStage;    
+    public MainMenu(GameUi gameUi) {
+        this.gameUi = gameUi;   
     }
 
     /**
@@ -22,11 +21,13 @@ public class MainMenu {
      * @return Scene
      */
     public Scene getScene() {
-        Button newGameButton = new Button("New Game");
+        Button newGameButton = new Button("Single Player");
         newGameButton.setOnAction(e -> {
             Board board = new Board();
-            primaryStage.setScene(board.getScene());
+            gameUi.setScene(board.getScene());
         });
+
+        Button mpGameButton = new Button("Multiplayer");
 
         Button exitButton = new Button("Close");
         exitButton.setOnAction(e -> {
@@ -35,7 +36,7 @@ public class MainMenu {
         });
 
         VBox vbox = new VBox(10);
-        vbox.getChildren().addAll(newGameButton, exitButton);
+        vbox.getChildren().addAll(newGameButton, mpGameButton, exitButton);
 
         return new Scene(vbox, 300, 200);
     }

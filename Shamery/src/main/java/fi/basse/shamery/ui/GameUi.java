@@ -1,20 +1,32 @@
 package fi.basse.shamery.ui;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class GameUi extends Application {
+    Stage primaryStage;
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        MainMenu mainMenu = new MainMenu(primaryStage);
-        primaryStage.setScene(mainMenu.getScene());
-        primaryStage.show();
+        this.primaryStage = primaryStage;
+        MainMenu mainMenu = new MainMenu(this);
+        setScene(mainMenu.getScene());
+        this.primaryStage.show();
     }
 
     @Override
     public void stop() throws Exception {
         System.out.println("App Closing...");
         super.stop();
+    }
+
+    /**
+     * Change active Scene of this GameUI.
+     * @param scene Scene to be shown.
+     */
+    public void setScene(Scene scene) {
+        primaryStage.setScene(scene);
     }
 
     /**
