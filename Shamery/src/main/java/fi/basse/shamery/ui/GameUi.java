@@ -17,6 +17,10 @@ public class GameUi extends Application {
         super.stop();
     }
 
+    /**
+     * Launch this application.
+     * @param args CLI arguments.
+     */
     public static void main(String[] args) {
         launch(args);
     }

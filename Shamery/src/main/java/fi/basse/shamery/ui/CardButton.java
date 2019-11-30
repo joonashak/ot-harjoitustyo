@@ -35,6 +35,9 @@ public class CardButton extends Button {
         };
     }
 
+    /**
+     * Update this button to match current Card state.
+     */
     public void update() {
         if (card.isRemoved()) {
             setVisible(false);

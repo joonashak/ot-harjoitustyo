@@ -9,14 +9,22 @@ import javafx.stage.Stage;
 public class MainMenu {
     Stage primaryStage;
 
+    /**
+     * Main menu and starting point of the application.
+     * @param primaryStage Stage for toggling Scene.
+     */
     public MainMenu(Stage primaryStage) {
         this.primaryStage = primaryStage;    
     }
 
+    /**
+     * Scene implementing the main menu.
+     * @return Scene
+     */
     public Scene getScene() {
         Button newGameButton = new Button("New Game");
         newGameButton.setOnAction(e -> {
-            Board board = new Board(primaryStage);
+            Board board = new Board();
             primaryStage.setScene(board.getScene());
         });
 

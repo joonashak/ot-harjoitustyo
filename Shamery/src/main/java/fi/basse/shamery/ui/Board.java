@@ -9,26 +9,77 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
 public class Board {
-    private Stage primaryStage;
     private Game game;
     private List<CardButton> cardBtns;
 
-    public Board(Stage primaryStage) {
-        this.primaryStage = primaryStage;
+    /**
+     * Playing area and main part of the UI.
+     */
+    public Board() {
         this.game = new Game();
         this.cardBtns = new ArrayList<>();
     }
 
+    /**
+     * Scene implementing the playing area.
+     * @return Scene
+     */
     public Scene getScene() {
 
+        GridPane cardGrid = createCardGrid();
+
+        cardGrid.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (game.getDeck().getOpenCards().size() == 2) {
+                    game.hideOpenCards();
+                }
+                update();
+            }
+        });
+
+        return new Scene(cardGrid, 800, 600);
+    }
+
+    /**
+     * Command all CardButtons to update.
+     */
+    public void update() {
+        for (CardButton cb : cardBtns) {
+            cb.update();
+        }
+    }
+
+    /**
+     * Attempt to reveal a Card on this Board.
+     * If two cards are currently open, this method hides all cards and updates
+     * instead of revealing another card. This is done to prevent accidentally
+     * revealing cards if the user intends to just click to hide an unmatched pair.
+     * @param card Card to be revealed.
+     */
+    public void reveal(Card card) {
+        if (game.getDeck().getOpenCards().size() == 2) {
+            game.hideOpenCards();
+        } else {
+            game.reveal(card);
+        }
+
+        update();
+    }
+
+    /**
+     * Create a grid and populate it with the deck's cards.
+     * @return GridPane
+     */
+    private GridPane createCardGrid() {
+        GridPane cardGrid = new GridPane();
+
         // Add the cards to the board in rows of six.
+        int cardsPerRow = 6;
         int x = 0;
         int y = 0;
-        int cardsPerRow = 6;
-        GridPane cardGrid = new GridPane();
 
         for (Card card : game.getDeck().getCards()) {
             CardButton button = new CardButton(card, this);
@@ -46,32 +97,6 @@ public class Board {
             }
         }
 
-        cardGrid.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if (game.getDeck().getOpenCards().size() == 2) {
-                    game.hideOpenCards();
-                }
-                update();
-            }
-        });
-
-        return new Scene(cardGrid, 800, 600);
-    }
-
-    public void update() {
-        for (CardButton cb : cardBtns) {
-            cb.update();
-        }
-    }
-
-    public void reveal(Card card) {
-        if (game.getDeck().getOpenCards().size() == 2) {
-            game.hideOpenCards();
-        } else {
-            game.reveal(card);
-        }
-
-        update();
+        return cardGrid;
     }
 }
