@@ -22,7 +22,6 @@ public class Board {
         this.cardBtns = new ArrayList<>();
     }
 
-    // TODO: Loop over the deck on each click (card or area) and update cards.
     public Scene getScene() {
 
         // Add the cards to the board in rows of six.

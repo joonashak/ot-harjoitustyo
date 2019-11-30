@@ -35,9 +35,8 @@ public class Game {
         
         // Otherwise check for a match.
         if (openCards.get(0).getCode() == card.getCode()) {
-            // TODO: Remove cards and update scoring.
-            card.setRevealed(true);
-            System.out.println("It's a match!");
+            card.setRemoved(true);
+            openCards.get(0).setRemoved(true);
         } else {
             card.setRevealed(true);
         }

@@ -35,23 +35,9 @@ public class CardButton extends Button {
         };
     }
 
-    /**
-     * Reveal this card (turn face up).
-     */
-    public void reveal() {
-        setText("" + card.getCode());
-    }
-
-    /**
-     * Hide this card (turn face down).
-     */
-    public void hide() {
-        setText("");
-    }
-
     public void update() {
         if (card.isRemoved()) {
-            setText("removed");
+            setVisible(false);
         } else if (card.isRevealed()) {
             setText("" + card.getCode());
         } else {

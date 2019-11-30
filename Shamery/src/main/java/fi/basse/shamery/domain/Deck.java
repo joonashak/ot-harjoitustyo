@@ -35,11 +35,12 @@ public class Deck {
 
     /**
      * List of Cards that are currently revealed.
+     * Removed cards are not included.
      * @return revealed cards as List<Card>.
      */
     public List<Card> getOpenCards() {
         return cards.stream()
-            .filter(c -> c.isRevealed())
+            .filter(c -> c.isRevealed() && !c.isRemoved())
             .collect(Collectors.toList());
     }
 
