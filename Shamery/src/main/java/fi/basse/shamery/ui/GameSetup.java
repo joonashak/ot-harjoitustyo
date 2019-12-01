@@ -75,7 +75,7 @@ public class GameSetup {
     private void addNames() {
         for (TextField tf : nameFields) {
             Player player = new Player(tf.getText());
-            gameUi.getGame().getScoring().addPlayer(player);
+            gameUi.getGame().addPlayer(player);
         }
     }
 }

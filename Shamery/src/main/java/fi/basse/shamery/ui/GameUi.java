@@ -45,7 +45,7 @@ public class GameUi extends Application {
      * Start a new game.
      */
     public void newGame() {
-        Board board = new Board();
+        Board board = new Board(this);
         setScene(board.getScene());
     }
 

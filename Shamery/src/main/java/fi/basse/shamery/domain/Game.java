@@ -1,20 +1,26 @@
 package fi.basse.shamery.domain;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import fi.basse.shamery.scoring.PointScoring;
+import fi.basse.shamery.scoring.Scoring;
 
 /**
  * Game management.
  */
 public class Game {
-    Deck deck;
-    Scoring scoring;
+    private Deck deck;
+    private Scoring scoring;
+    private List<Player> players;
 
     /**
-     * Initialize a new Game. WIP.
+     * Initialize a new Game.
      */
     public Game() {
         this.deck = new Deck(18);
-        this.scoring = new Scoring();
+        this.scoring = new PointScoring(this);
+        this.players = new ArrayList<>();
     }
 
     /**
@@ -40,12 +46,16 @@ public class Game {
         if (openCards.get(0).getCode() == card.getCode()) {
             card.setRemoved(true);
             openCards.get(0).setRemoved(true);
-            // TODO: scoring: points, turn end
+            scoring.continueTurn();
         } else {
             card.setRevealed(true);
-            // TODO: scoring turn end
+            scoring.endTurn();
         }
         
+        // Test scoring
+        if (this.players.size() > 0) {
+            System.out.println("Score: " + this.players.get(0).getScore());
+        }
     }
 
     /**
@@ -57,11 +67,31 @@ public class Game {
         }
     }
 
+    /**
+     * Add a player to scoring system.
+     * @param player Player instance.
+     */
+    public void addPlayer(Player player) {
+        System.out.println("addPlayer() called in Game");
+        // Max two players.
+        if (this.players.size() > 1) {
+            System.out.println("ERROR: This game can be played by at most two players!");
+            System.exit(1);
+        }
+
+        this.players.add(player);
+        System.out.println("New players.size = " + this.players.size());
+    }
+
     public Deck getDeck() {
         return deck;
     }
 
     public Scoring getScoring() {
         return scoring;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
     }
 }

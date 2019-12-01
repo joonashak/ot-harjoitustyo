@@ -17,8 +17,8 @@ public class Board {
     /**
      * Playing area and main part of the UI.
      */
-    public Board() {
-        this.game = new Game();
+    public Board(GameUi gameUi) {
+        this.game = gameUi.getGame();
         this.cardBtns = new ArrayList<>();
     }
 
