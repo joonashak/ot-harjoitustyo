@@ -43,4 +43,9 @@ public class TimeScoring implements Scoring {
         game.getPlayers().get(inTurn).incScore((int) elapsed);
         start = System.currentTimeMillis();
     }
+
+    @Override
+    public Integer getInTurn() {
+        return inTurn;
+    }
 }

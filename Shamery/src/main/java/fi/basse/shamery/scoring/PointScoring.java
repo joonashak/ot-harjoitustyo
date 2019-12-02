@@ -31,4 +31,9 @@ public class PointScoring implements Scoring {
     public void setGame(Game game) {
         this.game = game;
     }
+
+    @Override
+    public Integer getInTurn() {
+        return inTurn;
+    }
 }

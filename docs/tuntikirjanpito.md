@@ -12,5 +12,5 @@ Päivä|Aika (h)|Mitä tein?
 26.11.|5|Checkstyle ja UI:n koodaus.
 30.11.|4|Debuggaus ja UI:n sekä pistelaskun koodaus.
 1.12.|1|Pistelaskun jatkaminen.
-2.12.|1|Pistelaskun koodaus valmiiksi.
-**YHT.**|29|
+2.12.|2|Pistelaskun koodaus valmiiksi, yksikkötestit.
+**YHT.**|30|

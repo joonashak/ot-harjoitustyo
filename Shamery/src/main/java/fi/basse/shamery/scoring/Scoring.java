@@ -11,4 +11,6 @@ public interface Scoring {
     public void endTurn();
 
     public void setGame(Game game);
+
+    public Integer getInTurn();
 }
