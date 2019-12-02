@@ -4,17 +4,11 @@ import fi.basse.shamery.domain.Game;
 
 public class PointScoring implements Scoring {
     Game game;
-    int inTurn;
-
-    public PointScoring(Game game) {
-        this.game = game;
-        this.inTurn = 0;
-    }
+    int inTurn = 0;
 
     @Override
     public void startTurn() {
-        // TODO Auto-generated method stub
-        
+        // Not used in points scoring.
     }
 
     @Override
@@ -31,5 +25,10 @@ public class PointScoring implements Scoring {
         } else {
             inTurn = inTurn == 0 ? 1 : 0;
         }
+    }
+
+    @Override
+    public void setGame(Game game) {
+        this.game = game;
     }
 }

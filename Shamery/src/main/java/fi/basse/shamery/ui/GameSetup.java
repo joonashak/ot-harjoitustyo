@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fi.basse.shamery.domain.Player;
+import fi.basse.shamery.scoring.PointScoring;
+import fi.basse.shamery.scoring.TimeScoring;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -51,13 +53,13 @@ public class GameSetup {
         Button pointsGameButton = new Button("Points Game");
         pointsGameButton.setOnAction(e -> {
             addNames();
-            gameUi.newGame();
+            gameUi.newGame(new PointScoring());
         });
 
         Button timeTrialButton = new Button("Time Trial");
         timeTrialButton.setOnAction(e -> {
             addNames();
-            gameUi.newGame();
+            gameUi.newGame(new TimeScoring());
         });
 
         HBox startButtons = new HBox(10);

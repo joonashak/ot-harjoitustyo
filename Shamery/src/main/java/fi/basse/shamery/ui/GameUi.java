@@ -1,6 +1,7 @@
 package fi.basse.shamery.ui;
 
 import fi.basse.shamery.domain.Game;
+import fi.basse.shamery.scoring.Scoring;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -43,8 +44,10 @@ public class GameUi extends Application {
 
     /**
      * Start a new game.
+     * @param scoring Scoring instance to be used.
      */
-    public void newGame() {
+    public void newGame(Scoring scoring) {
+        game.setScoring(scoring);
         Board board = new Board(this);
         setScene(board.getScene());
     }

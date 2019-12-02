@@ -13,13 +13,13 @@ The game is local and has no authentication. New users can be added to keep trac
 ### Menu
 - Start a new game. **[DONE]**
 	- **Game modes:**
-		- Time trial (single/dual)
-		- Points (single/dual)
+		- Time trial (single/dual) **[DONE]**
+		- Points (single/dual) **[DONE]**
 - Browse highscores and past games.
 - Quit. **[DONE]**
 
 ### In Game
-- Player(s) can play the game along [the rules](./rules.md).
+- Player(s) can play the game along [the rules](./rules.md). **[DONE]**
 - Points visible.
 - When game ends, the result is saved in the game records.
 

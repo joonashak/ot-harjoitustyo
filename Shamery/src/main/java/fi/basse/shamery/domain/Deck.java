@@ -44,6 +44,12 @@ public class Deck {
             .collect(Collectors.toList());
     }
 
+    public int cardsLeft() {
+        return (int) cards.stream()
+            .filter(c -> !c.isRemoved())
+            .count();
+    }
+
     public List<Card> getCards() {
         return cards;
     }
