@@ -86,6 +86,10 @@ public class Game {
         return scoring;
     }
 
+    /**
+     * Define scoring for this game.
+     * @param scoring class implementing Scoring interface.
+     */
     public void setScoring(Scoring scoring) {
         scoring.setGame(this);
         this.scoring = scoring;

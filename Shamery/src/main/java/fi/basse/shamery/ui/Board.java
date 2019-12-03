@@ -16,6 +16,7 @@ public class Board {
 
     /**
      * Playing area and main part of the UI.
+     * @param gameUi Host GameUI instance.
      */
     public Board(GameUi gameUi) {
         this.game = gameUi.getGame();

@@ -44,6 +44,10 @@ public class Deck {
             .collect(Collectors.toList());
     }
 
+    /**
+     * Number of unmatched cards remaining in the Deck.
+     * @return number of cards in play.
+     */
     public int cardsLeft() {
         return (int) cards.stream()
             .filter(c -> !c.isRemoved())
