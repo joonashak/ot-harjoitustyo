@@ -1,6 +1,7 @@
 package fi.basse.shamery.domain;
 
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +21,13 @@ public class CardPairs {
      * Loads available card pairs from json file.
      */
     public CardPairs() {
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        InputStream stream = loader.getResourceAsStream("cardpairs.json");
+
         try {
             pairData = new Gson()
                 .fromJson(
-                    new FileReader("src/main/resources/cardpairs.json"),
+                    new InputStreamReader(stream),
                     new TypeToken<List<PairData>>() { }.getType()
             );
         } catch (Exception e) {
