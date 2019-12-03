@@ -13,4 +13,5 @@ Päivä|Aika (h)|Mitä tein?
 30.11.|4|Debuggaus ja UI:n sekä pistelaskun koodaus.
 1.12.|1|Pistelaskun jatkaminen.
 2.12.|2|Pistelaskun koodaus valmiiksi, yksikkötestit.
-**YHT.**|30|
+3.12.|2|Korjailu, dokumentaatio ja paketointi.
+**YHT.**|32|

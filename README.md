@@ -4,6 +4,8 @@
 
 Shamery is a concentration-type game where the players try to match up two shapes that go inside one another.
 
+[Releases](https://github.com/joonashak/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Documentation
 
 [Requirements Specification](docs/requirements.md)
@@ -22,6 +24,14 @@ Compile and run (with Maven):
 
 ```bash
 mvn compile exec:java -Dexec.mainClass=fi.basse.shamery.Main
+```
+
+### Build
+
+Generate executable JAR with dependencies:
+
+```bash
+mvn package
 ```
 
 ### Testing
