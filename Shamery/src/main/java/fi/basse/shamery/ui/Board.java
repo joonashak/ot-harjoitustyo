@@ -6,9 +6,11 @@ import java.util.List;
 import fi.basse.shamery.domain.Card;
 import fi.basse.shamery.domain.Game;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 public class Board {
     private Game game;
@@ -28,20 +30,11 @@ public class Board {
      * @return Scene
      */
     public Scene getScene() {
-
         GridPane cardGrid = createCardGrid();
+        Scoreboard sb = new Scoreboard(game);
+        VBox vbox = new VBox(cardGrid, sb.getContent());
 
-        cardGrid.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if (game.getDeck().getOpenCards().size() == 2) {
-                    game.hideOpenCards();
-                }
-                update();
-            }
-        });
-
-        return new Scene(cardGrid, 800, 600);
+        return new Scene(vbox, 800, 600);
     }
 
     /**
@@ -97,6 +90,16 @@ public class Board {
                 x++;
             }
         }
+
+        cardGrid.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (game.getDeck().getOpenCards().size() == 2) {
+                    game.hideOpenCards();
+                }
+                update();
+            }
+        });
 
         return cardGrid;
     }
