@@ -32,5 +32,5 @@ public interface Scoring {
      * Index of player currently in turn.
      * @return player index no.
      */
-    public Integer getInTurn();
+    public int getInTurn();
 }

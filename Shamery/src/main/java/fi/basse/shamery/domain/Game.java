@@ -11,6 +11,7 @@ public class Game {
     private Deck deck;
     private Scoring scoring;
     private List<Player> players;
+    private boolean started;
 
     /**
      * Initialize a new Game.
@@ -18,6 +19,7 @@ public class Game {
     public Game() {
         this.deck = new Deck(18);
         this.players = new ArrayList<>();
+        this.started = false;
     }
 
     /**
@@ -97,5 +99,13 @@ public class Game {
 
     public List<Player> getPlayers() {
         return players;
+    }
+
+    public boolean isStarted() {
+        return started;
+    }
+
+    public void setStarted(boolean started) {
+        this.started = started;
     }
 }

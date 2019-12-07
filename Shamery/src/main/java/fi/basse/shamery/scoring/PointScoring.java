@@ -33,7 +33,7 @@ public class PointScoring implements Scoring {
     }
 
     @Override
-    public Integer getInTurn() {
+    public int getInTurn() {
         return inTurn;
     }
 }

@@ -14,4 +14,6 @@ Päivä|Aika (h)|Mitä tein?
 1.12.|1|Pistelaskun jatkaminen.
 2.12.|2|Pistelaskun koodaus valmiiksi, yksikkötestit.
 3.12.|2|Korjailu, dokumentaatio ja paketointi.
-**YHT.**|32|
+6.12.|2|Tulostaulun koodaaminen pelinäkymään.
+7.12.|2|Tulostaulun koodaaminen pelinäkymään.
+**YHT.**|36|

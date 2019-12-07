@@ -6,7 +6,6 @@ import java.util.List;
 import fi.basse.shamery.domain.Card;
 import fi.basse.shamery.domain.Game;
 import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -15,6 +14,7 @@ import javafx.scene.layout.VBox;
 public class Board {
     private Game game;
     private List<CardButton> cardBtns;
+    private Scoreboard scoreboard;
 
     /**
      * Playing area and main part of the UI.
@@ -31,19 +31,24 @@ public class Board {
      */
     public Scene getScene() {
         GridPane cardGrid = createCardGrid();
-        Scoreboard sb = new Scoreboard(game);
-        VBox vbox = new VBox(cardGrid, sb.getContent());
+        this.scoreboard = new Scoreboard(game);
+        VBox vbox = new VBox(cardGrid, scoreboard.getContent());
 
         return new Scene(vbox, 800, 600);
     }
 
     /**
-     * Command all CardButtons to update.
+     * Update this Board to reflect Game's current state.
+     * Should be called after updates to game state are complete.
      */
     public void update() {
+        // Update all card buttons.
         for (CardButton cb : cardBtns) {
             cb.update();
         }
+
+        // Update scoreboard.
+        scoreboard.update();
     }
 
     /**

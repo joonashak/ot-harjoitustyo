@@ -4,15 +4,15 @@ import fi.basse.shamery.domain.Game;
 
 public class TimeScoring implements Scoring {
     Game game;
-    Integer inTurn = null;
+    int inTurn = 0;
     long start = 0;
 
     @Override
     public void startTurn() {
         // Start timer here on first turn.
-        if (inTurn == null) {
-            inTurn = 0;
+        if (start == 0) {
             start = System.currentTimeMillis();
+            game.setStarted(true);
         }
     }
 
@@ -20,7 +20,7 @@ public class TimeScoring implements Scoring {
     public void continueTurn() {
         // End of game.
         if (game.getDeck().cardsLeft() == 0) {
-            switchTiming();
+            update();
         }
     }
 
@@ -28,7 +28,7 @@ public class TimeScoring implements Scoring {
     public void endTurn() {
         // Timing switch in multiplayer.
         if (game.getPlayers().size() == 2) {
-            switchTiming();
+            update();
             inTurn = inTurn == 0 ? 1 : 0;
         }
     }
@@ -38,14 +38,18 @@ public class TimeScoring implements Scoring {
         this.game = game;
     }
 
-    private void switchTiming() {
+    public void update() {
+        if (!game.isStarted()) {
+            return;
+        }
+        
         long elapsed = System.currentTimeMillis() - start;
         game.getPlayers().get(inTurn).incScore((int) elapsed);
         start = System.currentTimeMillis();
     }
 
     @Override
-    public Integer getInTurn() {
+    public int getInTurn() {
         return inTurn;
     }
 }

@@ -41,7 +41,7 @@ public class GameSetup {
 
         for (int i = 1; i <= noPlayers; i++) {
             Label label = new Label(String.format("Player %s", i));
-            TextField tf = new TextField();
+            TextField tf = new TextField(String.format("Player %s", i));
             nameFields.add(tf);
             nameGrid.add(label, 1, i);
             nameGrid.add(tf, 2, i);
