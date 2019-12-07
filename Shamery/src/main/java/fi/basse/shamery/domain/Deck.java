@@ -36,7 +36,7 @@ public class Deck {
     /**
      * List of Cards that are currently revealed.
      * Removed cards are not included.
-     * @return revealed cards as List<Card>.
+     * @return revealed cards as List.
      */
     public List<Card> getOpenCards() {
         return cards.stream()
