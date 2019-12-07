@@ -1,6 +1,7 @@
 package fi.basse.shamery.ui;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import fi.basse.shamery.domain.Game;
 import fi.basse.shamery.domain.Player;
@@ -80,13 +81,31 @@ public class Scoreboard {
 
         for (int i = 0; i < game.getPlayers().size(); i++) {
             int score = game.getPlayers().get(i).getScore();
-            scoreFields.get(i).setText(String.format("%s", score));
+            scoreFields.get(i).setText(timeFromScore(score));
         }
+    }
+
+    private String timeFromScore(int score) {
+        StringBuilder res = new StringBuilder();
+        Date date = new Date(score);
+
+        // Show minutes if > 0.
+        if (score < 60 * 1000) {
+            res.append(String.format("%tS", date));
+        } else {
+            res.append(String.format("%tM:%tS", date, date));
+        }
+
+        // Add tenths.
+        int ms = score % 1000;
+        res.append(String.format(".%d", ms / 100));
+
+        return res.toString();
     }
 
     private Timeline createTimeline() {
         return new Timeline(
-            new KeyFrame(Duration.millis(500),
+            new KeyFrame(Duration.millis(100),
                 event -> {
                     if (game.getScoring() instanceof PointScoring) {
                         setPointScores();
