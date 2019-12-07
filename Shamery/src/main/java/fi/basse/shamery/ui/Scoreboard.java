@@ -41,7 +41,7 @@ public class Scoreboard {
      * @return Node the content.
      */
     public Node getContent() {
-        HBox container = new HBox();
+        HBox container = new HBox(10);
 
         for (Player p : game.getPlayers()) {
             Label name = new Label(p.getName());
