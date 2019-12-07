@@ -25,9 +25,8 @@ public class TimeScoringTest {
 
     @Test
     public void firstTurnStarts() {
-        assertNull(ts.getInTurn());
         ts.startTurn();
-        assertEquals(0, (int) ts.getInTurn());
+        assertTrue(game.isStarted());
     }
 
     @Test
