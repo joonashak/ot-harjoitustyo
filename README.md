@@ -8,6 +8,8 @@ Shamery is a concentration-type game where the players try to match up two shape
 
 ## Documentation
 
+[User Guide](docs/user_guide.md)
+
 [Requirements Specification](docs/requirements.md)
 
 [Rules](docs/rules.md)
