@@ -50,11 +50,6 @@ public class Game {
             card.setRevealed(true);
             scoring.endTurn();
         }
-        
-        // Test scoring
-        for (Player p : players) {
-            System.out.println("Score " + p.getName() + ": " + p.getScore());
-        }
     }
 
     /**
