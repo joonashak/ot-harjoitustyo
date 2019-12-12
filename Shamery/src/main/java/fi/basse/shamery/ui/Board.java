@@ -34,7 +34,7 @@ public class Board {
         this.scoreboard = new Scoreboard(game);
         VBox vbox = new VBox(cardGrid, scoreboard.getContent());
 
-        return new Scene(vbox, 800, 600);
+        return new Scene(vbox);
     }
 
     /**
@@ -83,8 +83,6 @@ public class Board {
         for (Card card : game.getDeck().getCards()) {
             CardButton button = new CardButton(card, this);
             cardBtns.add(button);
-            button.setMinHeight(100);
-            button.setMinWidth(60);
             cardGrid.add(button, x, y);
 
             // Next col and row indexes.

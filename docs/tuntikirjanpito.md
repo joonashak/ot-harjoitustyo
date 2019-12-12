@@ -17,4 +17,6 @@ Päivä|Aika (h)|Mitä tein?
 6.12.|2|Tulostaulun koodaaminen pelinäkymään.
 7.12.|3|Tulostaulun koodaaminen pelinäkymään, dokumentaatio.
 10.12.|2|Dokumentaation kirjoittaminen, testaus.
-**YHT.**|39|
+11.12.|1|Korttigrafiikoiden tekeminen.
+12.12.|3|Korttigrafiikoiden tekeminen ja niiden implementoiminen UI:n koodiin.
+**YHT.**|43|

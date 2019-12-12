@@ -24,6 +24,11 @@ public class CardButton extends Button {
         this.card = card;
         this.board = board;
         setOnAction(onClick());
+        getStyleClass().add("card-button");
+        
+        // Dimensions
+        setMinHeight(200);
+        setMinWidth(150);
     }
 
     private EventHandler<ActionEvent> onClick() {
@@ -42,9 +47,9 @@ public class CardButton extends Button {
         if (card.isRemoved()) {
             setVisible(false);
         } else if (card.isRevealed()) {
-            setText("" + card.getCode());
+            setStyle(String.format("-fx-background-image: url('card_icons/%s.png');", card.getName()));
         } else {
-            setText("");
+            setStyle(("-fx-background-image: none"));
         }
     }
 }

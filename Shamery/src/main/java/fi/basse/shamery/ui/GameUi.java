@@ -29,6 +29,7 @@ public class GameUi extends Application {
      * @param scene Scene to be shown.
      */
     public void setScene(Scene scene) {
+        scene.getStylesheets().add("main.css");
         primaryStage.setScene(scene);
     }
 
