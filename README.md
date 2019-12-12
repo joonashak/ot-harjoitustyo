@@ -4,7 +4,7 @@
 
 Shamery is a concentration-type game where the players try to match up two shapes that go inside one another.
 
-[Releases](https://github.com/joonashak/ot-harjoitustyo/releases/tag/viikko5)
+[Releases](https://github.com/joonashak/ot-harjoitustyo/releases)
 
 ## Documentation
 
