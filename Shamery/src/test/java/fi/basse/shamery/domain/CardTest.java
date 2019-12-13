@@ -13,7 +13,7 @@ public class CardTest {
     
     @Before
     public void setUp() {
-        card = new Card(1, 99, "asd");
+        card = new Card(1, 1, 99, "asd");
     }
 
     @Test
@@ -35,7 +35,7 @@ public class CardTest {
     
     @Test
     public void matchesOk() {
-        Card card2 = new Card(1, 999, "asd");
+        Card card2 = new Card(1, 2, 999, "asd");
         assertTrue(card.matches(card));
         assertTrue(!card.matches(card2));
     }
@@ -50,10 +50,5 @@ public class CardTest {
     public void nameOk() {
         card.setName("abc");
         assertEquals("abc", card.getName());
-    }
-
-    @Test
-    public void stringOk() {
-        assertEquals("Card - id: 1, code: 99, name: asd, removed: false", card.toString());
     }
 }

@@ -9,18 +9,20 @@ import java.util.Objects;
  * @author joonas
  */
 public class Card {
-    private int code, id;
+    private int code, id, pairing;
     private String name;
     private boolean isRemoved, isRevealed;
 
     /**
      * Construct a new Card.
      * @param id card id
+     * @param pairing indicates which "side" of a pair this card is.
      * @param code type code for matching up pairs
      * @param name used to find the icon for this Card
      */
-    public Card(int id, int code, String name) {
+    public Card(int id, int pairing, int code, String name) {
         this.id = id;
+        this.pairing = pairing;
         this.code = code;
         this.name = name;
         this.isRemoved = false;
@@ -83,17 +85,11 @@ public class Card {
         this.isRevealed = isRevealed;
     }
 
-    @Override
-    public String toString() {
-        return new StringBuilder()
-            .append("Card - id: ")
-            .append(id)
-            .append(", code: ")
-            .append(code)
-            .append(", name: ")
-            .append(name)
-            .append(", removed: ")
-            .append(isRemoved)
-            .toString();
+    public int getPairing() {
+        return pairing;
+    }
+
+    public void setPairing(int pairing) {
+        this.pairing = pairing;
     }
 }

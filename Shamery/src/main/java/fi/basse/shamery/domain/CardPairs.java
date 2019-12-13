@@ -50,8 +50,8 @@ public class CardPairs {
         String name = pd.getName();
 
         // Card icons are suffixed with _1 and _2 for each pair.
-        res.add(new Card(id, type, name.concat("_1")));
-        res.add(new Card(id + 1, type, name.concat("_2")));
+        res.add(new Card(id, 1, type, name.concat("_1")));
+        res.add(new Card(id + 1, 2, type, name.concat("_2")));
 
         // Loop pointer indefinitely over pairData contents.
         pointer = pointer == pairData.size() - 1 ? 0 : pointer + 1;

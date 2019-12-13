@@ -42,7 +42,12 @@ public class Game {
         }
         
         // Otherwise check for a match.
-        if (openCards.get(0).getCode() == card.getCode()) {
+        // In addition to checking for the equality of type codes, we make sure that
+        // the matching cards are not identical (same "sides").
+        boolean codeMatch = openCards.get(0).getCode() == card.getCode();
+        boolean pairingOk = openCards.get(0).getPairing() != card.getPairing();
+
+        if (codeMatch && pairingOk) {
             card.setRemoved(true);
             openCards.get(0).setRemoved(true);
             scoring.continueTurn();
