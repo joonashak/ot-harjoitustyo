@@ -59,3 +59,7 @@ Run `checkstyle`:
 ```bash
 mvn jxr:jxr checkstyle:checkstyle
 ```
+
+## License
+
+This work is licensed under the MIT license except for the fonts which are licensed under their respective licenses included in their directories ([Shamery/src/main/resources/fonts](Shamery/src/main/resources/fonts)).
