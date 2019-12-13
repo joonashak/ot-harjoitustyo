@@ -74,6 +74,7 @@ public class Board {
      */
     private GridPane createCardGrid() {
         GridPane cardGrid = new GridPane();
+        cardGrid.setId("card-grid");
 
         // Add the cards to the board in rows of six.
         int cardsPerRow = 6;
