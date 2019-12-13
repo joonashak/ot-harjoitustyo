@@ -2,6 +2,7 @@ package fi.basse.shamery.ui;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class MainMenu {
@@ -20,6 +21,9 @@ public class MainMenu {
      * @return Scene
      */
     public Scene getScene() {
+        Label logo = new Label("Shamery");
+        logo.getStyleClass().add("logo");
+
         Button newGameButton = new Button("Single Player");
         newGameButton.setOnAction(e -> gameUi.setUpGame(1));
 
@@ -37,8 +41,9 @@ public class MainMenu {
         });
 
         VBox vbox = new VBox(10);
-        vbox.getChildren().addAll(newGameButton, mpGameButton, exitButton);
+        vbox.setId("main-menu");
+        vbox.getChildren().addAll(logo, newGameButton, mpGameButton, exitButton);
 
-        return new Scene(vbox, 300, 200);
+        return new Scene(vbox);
     }
 }

@@ -1,3 +1,21 @@
+@font-face {
+  src: url('fonts/open-sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  src: url('fonts/pacifico/Pacifico.ttf');
+}
+
+.logo {
+  -fx-font-family: 'Pacifico';
+  -fx-font-size: 50px;
+}
+
+#main-menu {
+  -fx-alignment: center;
+  -fx-padding: 30px 100px 100px 100px;
+}
+
 #card-grid {
   -fx-padding: 20px;
   -fx-vgap: 10px;
@@ -6,6 +24,7 @@
 
 .button {
   -fx-border-color: black;
+  -fx-font-family: 'Open Sans';
 }
 
 .card-button {

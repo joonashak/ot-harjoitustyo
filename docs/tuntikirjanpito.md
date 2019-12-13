@@ -19,4 +19,5 @@ Päivä|Aika (h)|Mitä tein?
 10.12.|2|Dokumentaation kirjoittaminen, testaus.
 11.12.|1|Korttigrafiikoiden tekeminen.
 12.12.|3|Korttigrafiikoiden tekeminen ja niiden implementoiminen UI:n koodiin.
-**YHT.**|43|
+13.12.|2|Logiikan korjaaminen ja tyylimäärittelyt.
+**YHT.**|45|
