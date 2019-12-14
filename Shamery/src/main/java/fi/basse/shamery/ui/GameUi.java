@@ -12,6 +12,7 @@ public class GameUi extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("Shamery");
         this.primaryStage = primaryStage;
         MainMenu mainMenu = new MainMenu(this);
         setScene(mainMenu.getScene());

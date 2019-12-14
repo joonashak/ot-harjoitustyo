@@ -24,13 +24,13 @@ public class MainMenu {
         Label logo = new Label("Shamery");
         logo.getStyleClass().add("logo");
 
-        Button newGameButton = new Button("Single Player");
+        Button newGameButton = new Button("SINGLE PLAYER");
         newGameButton.setOnAction(e -> gameUi.setUpGame(1));
 
-        Button mpGameButton = new Button("Multiplayer");
+        Button mpGameButton = new Button("MULTIPLAYER");
         mpGameButton.setOnAction(e -> gameUi.setUpGame(2));
 
-        Button exitButton = new Button("Close");
+        Button exitButton = new Button("CLOSE");
         exitButton.setOnAction(e -> {
             try {
                 gameUi.stop();
@@ -40,7 +40,7 @@ public class MainMenu {
             }
         });
 
-        VBox vbox = new VBox(10);
+        VBox vbox = new VBox();
         vbox.setId("main-menu");
         vbox.getChildren().addAll(logo, newGameButton, mpGameButton, exitButton);
 

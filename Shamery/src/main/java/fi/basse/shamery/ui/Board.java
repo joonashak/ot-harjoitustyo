@@ -2,7 +2,6 @@ package fi.basse.shamery.ui;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import fi.basse.shamery.domain.Card;
 import fi.basse.shamery.domain.Game;
 import javafx.event.EventHandler;
