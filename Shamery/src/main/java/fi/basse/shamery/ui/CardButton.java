@@ -1,9 +1,13 @@
 package fi.basse.shamery.ui;
 
+import java.io.InputStream;
 import fi.basse.shamery.domain.Card;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 
 /**
  * Represents a Card on the Board.
@@ -11,9 +15,11 @@ import javafx.scene.control.Button;
  * reveal events to the game.
  * @author Joonas Häkkinen
  */
-public class CardButton extends Button {
+public class CardButton extends Rectangle {
     private Card card;
     private Board board;
+    private ImagePattern frontside;
+    private Color backside;
 
     /**
      * Generate a new CardButton.
@@ -23,19 +29,35 @@ public class CardButton extends Button {
     public CardButton(Card card, Board board) {
         this.card = card;
         this.board = board;
-        setOnAction(onClick());
-        getStyleClass().add("card-button");
+
+        // Dimensions.
+        setHeight(200);
+        setWidth(150);
+        setArcHeight(20);
+        setArcWidth(20);
         
-        // Dimensions
-        setMinHeight(200);
-        setMinWidth(150);
+        // Card backside.
+        this.backside = Color.BISQUE;
+
+        // Preload card image.
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        String path = String.format("card_icons/%s.png", card.getName());
+        InputStream stream = loader.getResourceAsStream(path);
+        this.frontside = new ImagePattern(
+            new Image(stream, getWidth(), getHeight(), false, false));
+
+        // Apply styles and action handling.
+        setOnMouseClicked(onClick());
+        getStyleClass().add("card-button");
+        setFill(backside);
     }
 
-    private EventHandler<ActionEvent> onClick() {
-        return new EventHandler<ActionEvent>() {
+    private EventHandler<MouseEvent> onClick() {
+        return new EventHandler<MouseEvent>() {
             @Override
-            public void handle(ActionEvent event) {
+            public void handle(MouseEvent event) {
                 board.reveal(card);
+                event.consume();
             }
         };
     }
@@ -47,9 +69,9 @@ public class CardButton extends Button {
         if (card.isRemoved()) {
             setVisible(false);
         } else if (card.isRevealed()) {
-            setStyle(String.format("-fx-background-image: url('card_icons/%s.png');", card.getName()));
+            setFill(frontside);
         } else {
-            setStyle(("-fx-background-image: none"));
+            setFill(backside);
         }
     }
 }

@@ -21,11 +21,5 @@
 }
 
 .card-button {
-  -fx-background-size: contain;
-  -fx-background-repeat: no-repeat;
-  -fx-background-position: center;
-  -fx-background-radius: 10px;
-
-  -fx-border-width: 2px;
-  -fx-border-radius: 10px;
+  
 }
