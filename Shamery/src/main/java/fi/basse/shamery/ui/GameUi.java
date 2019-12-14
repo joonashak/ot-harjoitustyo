@@ -29,7 +29,7 @@ public class GameUi extends Application {
      * @param scene Scene to be shown.
      */
     public void setScene(Scene scene) {
-        scene.getStylesheets().add("main.css");
+        scene.getStylesheets().addAll("css/fonts.css", "css/main.css");
         primaryStage.setScene(scene);
     }
 
