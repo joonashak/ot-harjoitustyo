@@ -2,7 +2,6 @@ package fi.basse.shamery.ui;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import fi.basse.shamery.domain.Player;
 import fi.basse.shamery.scoring.PointScoring;
 import fi.basse.shamery.scoring.TimeScoring;
@@ -34,10 +33,14 @@ public class GameSetup {
      * @return Scene
      */
     public Scene getScene() {
+        Label logo = new Label("Shamery");
+        logo.getStyleClass().add("logo");
+
         Label prompt = new Label("Enter your name...");
 
         // One or two input fields for names.
         GridPane nameGrid = new GridPane();
+        nameGrid.setId("name-grid");
 
         for (int i = 1; i <= noPlayers; i++) {
             Label label = new Label(String.format("Player %s", i));
@@ -50,25 +53,31 @@ public class GameSetup {
         // Buttons for each game type.
         Label selectPrompt = new Label("...and select a game mode:");
 
-        Button pointsGameButton = new Button("Points Game");
+        Button pointsGameButton = new Button("POINTS GAME");
+        pointsGameButton.setId("points-game-button");
+        pointsGameButton.setMinWidth(200);
         pointsGameButton.setOnAction(e -> {
             addNames();
             gameUi.newGame(new PointScoring());
         });
 
-        Button timeTrialButton = new Button("Time Trial");
+        Button timeTrialButton = new Button("TIME TRIAL");
+        timeTrialButton.setId("time-trial-button");
+        timeTrialButton.setMinWidth(200);
         timeTrialButton.setOnAction(e -> {
             addNames();
             gameUi.newGame(new TimeScoring());
         });
 
-        HBox startButtons = new HBox(10);
+        HBox startButtons = new HBox();
         startButtons.getChildren().addAll(pointsGameButton, timeTrialButton);
+        startButtons.setId("game-button-container");
 
         VBox vbox = new VBox(10);
-        vbox.getChildren().addAll(prompt, nameGrid, selectPrompt, startButtons);
+        vbox.getChildren().addAll(logo, prompt, nameGrid, selectPrompt, startButtons);
+        vbox.getStyleClass().add("menu");
 
-        return new Scene(vbox, 300, 200);
+        return new Scene(vbox);
     }
 
     /**

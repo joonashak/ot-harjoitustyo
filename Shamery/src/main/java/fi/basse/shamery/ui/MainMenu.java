@@ -41,8 +41,9 @@ public class MainMenu {
         });
 
         VBox vbox = new VBox();
-        vbox.setId("main-menu");
         vbox.getChildren().addAll(logo, newGameButton, mpGameButton, exitButton);
+        vbox.getStyleClass().add("menu");
+        vbox.setId("main-menu");
 
         return new Scene(vbox);
     }
