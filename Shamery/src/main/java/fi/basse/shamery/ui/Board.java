@@ -59,7 +59,6 @@ public class Board {
      * @param card Card to be revealed.
      */
     public void reveal(Card card) {
-        System.out.println("Reveal called for id:" + card.getId());
         if (game.getDeck().getOpenCards().size() == 2) {
             game.hideOpenCards();
         } else {
