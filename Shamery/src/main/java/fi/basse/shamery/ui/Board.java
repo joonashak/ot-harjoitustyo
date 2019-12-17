@@ -1,18 +1,13 @@
 package fi.basse.shamery.ui;
 
-import java.util.ArrayList;
-import java.util.List;
 import fi.basse.shamery.domain.Card;
 import fi.basse.shamery.domain.Game;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 public class Board {
     private Game game;
-    private List<CardButton> cardBtns;
+    private CardGrid cardGrid;
     private Scoreboard scoreboard;
 
     /**
@@ -21,7 +16,6 @@ public class Board {
      */
     public Board(GameUi gameUi) {
         this.game = gameUi.getGame();
-        this.cardBtns = new ArrayList<>();
     }
 
     /**
@@ -29,7 +23,7 @@ public class Board {
      * @return Scene
      */
     public Scene getScene() {
-        GridPane cardGrid = createCardGrid();
+        this.cardGrid = new CardGrid(this);
         this.scoreboard = new Scoreboard(game);
         VBox vbox = new VBox(cardGrid, scoreboard.getContent());
 
@@ -41,12 +35,7 @@ public class Board {
      * Should be called after updates to game state are complete.
      */
     public void update() {
-        // Update all card buttons.
-        for (CardButton cb : cardBtns) {
-            cb.update();
-        }
-
-        // Update scoreboard.
+        cardGrid.update();
         scoreboard.update();
     }
 
@@ -67,43 +56,7 @@ public class Board {
         update();
     }
 
-    /**
-     * Create a grid and populate it with the deck's cards.
-     * @return GridPane
-     */
-    private GridPane createCardGrid() {
-        GridPane cardGrid = new GridPane();
-        cardGrid.setId("card-grid");
-
-        // Add the cards to the board in rows of six.
-        int cardsPerRow = 6;
-        int x = 0;
-        int y = 0;
-
-        for (Card card : game.getDeck().getCards()) {
-            CardButton button = new CardButton(card, this);
-            cardBtns.add(button);
-            cardGrid.add(button, x, y);
-
-            // Next col and row indexes.
-            if (x == cardsPerRow - 1) {
-                x = 0;
-                y++;
-            } else {
-                x++;
-            }
-        }
-
-        cardGrid.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if (game.getDeck().getOpenCards().size() == 2) {
-                    game.hideOpenCards();
-                }
-                update();
-            }
-        });
-
-        return cardGrid;
+    public Game getGame() {
+        return game;
     }
 }
