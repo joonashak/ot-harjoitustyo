@@ -37,7 +37,7 @@ public class CardButton extends Rectangle {
         setArcWidth(20);
         
         // Card backside.
-        this.backside = Color.BISQUE;
+        this.backside = Color.web("#8ee4af");
 
         // Preload card image.
         ClassLoader loader = Thread.currentThread().getContextClassLoader();

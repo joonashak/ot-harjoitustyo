@@ -28,9 +28,10 @@
 }
 
 #card-grid {
-  -fx-padding: 20px;
-  -fx-vgap: 10px;
-  -fx-hgap: 10px;
+  -fx-padding: 50px;
+  -fx-vgap: 20px;
+  -fx-hgap: 20px;
+  -fx-background-color: #edf5e1;
 }
 
 .button {
@@ -59,5 +60,6 @@
 }
 
 .card-button {
-
+  -fx-stroke: #379683;
+  -fx-stroke-width: 3px;
 }
