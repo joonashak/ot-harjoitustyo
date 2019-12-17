@@ -41,13 +41,19 @@ public class Scoreboard {
      * @return Node the content.
      */
     public Node getContent() {
-        HBox container = new HBox(10);
+        HBox container = new HBox();
+        container.setId("scoreboard");
 
         for (Player p : game.getPlayers()) {
             Label name = new Label(p.getName());
+            name.getStyleClass().add("name");
+
             Label score = new Label();
+            score.getStyleClass().add("score");
+
             scoreFields.add(score);
-            VBox vbox = new VBox(name, score);
+            VBox vbox = new VBox(score, name);
+            vbox.getStyleClass().add("score-panel");
             container.getChildren().addAll(vbox);
         }
 
@@ -76,9 +82,11 @@ public class Scoreboard {
     }
 
     private void setTimingScores() {
+        // Update scoring object to write current time in Player.score.
         TimeScoring ts = (TimeScoring) game.getScoring();
         ts.update();
 
+        // Then read the updated score and insert into visible fields.
         for (int i = 0; i < game.getPlayers().size(); i++) {
             int score = game.getPlayers().get(i).getScore();
             scoreFields.get(i).setText(timeFromScore(score));

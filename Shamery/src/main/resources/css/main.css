@@ -34,6 +34,28 @@
   -fx-background-color: #edf5e1;
 }
 
+#scoreboard {
+  -fx-background-color: #05386b;
+  -fx-font-family: 'Open Sans';
+  -fx-font-weight: bold;
+  -fx-alignment: center;
+}
+
+.score-panel {
+  -fx-alignment: center;
+  -fx-padding: 20px 100px 20px 100px;
+}
+
+.score {
+  -fx-text-fill: #edf5e1;
+  -fx-font-size: 80px;
+}
+
+.name {
+  -fx-text-fill: #5cdb95;
+  -fx-font-size: 30px;
+}
+
 .button {
   -fx-background-radius: 18px;
   -fx-background-color: #05386b;
