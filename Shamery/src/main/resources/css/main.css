@@ -85,3 +85,48 @@
   -fx-stroke: #379683;
   -fx-stroke-width: 3px;
 }
+
+#game-over {
+  -fx-background-color: #05386b;
+  -fx-padding: 50px 150px 100px 150px;
+  -fx-spacing: 30px;
+  -fx-alignment: center;
+  -fx-font-family: 'Open Sans';
+}
+
+#game-over-label {
+  -fx-font-family: 'Pacifico';
+  -fx-font-size: 60px;
+  -fx-text-fill: #5cdb95;
+  -fx-effect: dropshadow(gaussian, #8ee4af, 10, 0.4, 0, 0);
+}
+
+.align-center {
+  -fx-alignment: center;
+}
+
+.game-over-score-grid {
+  -fx-spacing: 20px;
+}
+
+.game-over-score {
+  -fx-text-fill: #edf5e1;
+  -fx-font-size: 50px;
+}
+
+.game-over-name {
+  -fx-text-fill: #5cdb95;
+  -fx-font-size: 20px;
+}
+
+#result-label {
+  -fx-text-fill: #edf5e1;
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+}
+
+#info-label {
+  -fx-text-fill: #379683;
+  -fx-font-size: 18px;
+  -fx-font-style: italic;
+}

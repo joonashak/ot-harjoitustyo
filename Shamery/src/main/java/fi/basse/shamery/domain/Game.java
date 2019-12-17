@@ -17,7 +17,7 @@ public class Game {
      * Initialize a new Game.
      */
     public Game() {
-        this.deck = new Deck(18);
+        this.deck = new Deck(4);
         this.players = new ArrayList<>();
         this.started = false;
     }
@@ -63,6 +63,24 @@ public class Game {
      */
     public boolean isOver() {
         return deck.cardsLeft() == 0;
+    }
+
+    /**
+     * Get the leading Player.
+     * @return Leading Player or null if tie.
+     */
+    public Player getLeader() {
+        if (players.size() == 1) {
+            return players.get(0);
+        }
+
+        if (players.get(0).getScore() == players.get(1).getScore()) {
+            return null;
+        }
+
+        return players.get(0).getScore() > players.get(1).getScore()
+            ? players.get(0)
+            : players.get(1);
     }
 
     /**

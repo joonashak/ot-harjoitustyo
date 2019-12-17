@@ -89,11 +89,16 @@ public class Scoreboard {
         // Then read the updated score and insert into visible fields.
         for (int i = 0; i < game.getPlayers().size(); i++) {
             int score = game.getPlayers().get(i).getScore();
-            scoreFields.get(i).setText(timeFromScore(score));
+            scoreFields.get(i).setText(timeFromMs(score));
         }
     }
 
-    private String timeFromScore(int score) {
+    /**
+     * Convert milliseconds to game's time display format.
+     * @param score Score in milliseconds.
+     * @return String representing given score.
+     */
+    public static String timeFromMs(int score) {
         StringBuilder res = new StringBuilder();
         Date date = new Date(score);
 

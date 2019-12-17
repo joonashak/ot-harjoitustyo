@@ -42,7 +42,7 @@ public class Board {
         scoreboard.update();
 
         if (game.isOver()) {
-            EndOfGame eog = new EndOfGame();
+            EndOfGame eog = new EndOfGame(gameUi);
             gameUi.setScene(eog.getScene());
         }
     }

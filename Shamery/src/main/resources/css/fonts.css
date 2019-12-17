@@ -7,5 +7,9 @@
 }
 
 @font-face {
+  src: url('../fonts/open-sans/OpenSans-Italic.ttf');
+}
+
+@font-face {
   src: url('../fonts/pacifico/Pacifico.ttf');
 }

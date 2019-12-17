@@ -21,5 +21,5 @@ Päivä|Aika (h)|Mitä tein?
 12.12.|3|Korttigrafiikoiden tekeminen ja niiden implementoiminen UI:n koodiin.
 13.12.|2|Logiikan korjaaminen ja tyylimäärittelyt.
 14.12.|5|Debuggaus ja tyylimäärittelyt.
-17.12.|3|Refaktorointi, pelilaudan ja tulostaulun tyylit.
-**YHT.**|53|
+17.12.|5|Refaktorointi, pelilaudan ja tulostaulun tyylit. Pelin loppuminen ja game over -näkymä.
+**YHT.**|55|

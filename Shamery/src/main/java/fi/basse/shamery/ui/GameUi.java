@@ -14,8 +14,7 @@ public class GameUi extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Shamery");
         this.primaryStage = primaryStage;
-        MainMenu mainMenu = new MainMenu(this);
-        setScene(mainMenu.getScene());
+        showMenu();
         this.primaryStage.show();
     }
 
@@ -51,6 +50,14 @@ public class GameUi extends Application {
         game.setScoring(scoring);
         Board board = new Board(this);
         setScene(board.getScene());
+    }
+
+    /**
+     * Show main menu.
+     */
+    public void showMenu() {
+        MainMenu mainMenu = new MainMenu(this);
+        setScene(mainMenu.getScene());
     }
 
     /**
