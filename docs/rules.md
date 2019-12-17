@@ -37,7 +37,7 @@ One revealed matching pair equals one point with higher scores considered better
 
 ### 2. Time-based Scoring
 
-The total time between each turn's beginning and end with faster times considered better. This scoring works the same for one and two players.
+The total time between each turn's beginning and end with faster times considered better. In multiplayer, time is deducted every time player finds a matching pair.
 
 ## §6 End of Game
 

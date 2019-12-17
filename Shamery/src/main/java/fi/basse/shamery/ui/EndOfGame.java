@@ -23,7 +23,7 @@ public class EndOfGame {
         gameOver.setId("game-over-label");
 
         // Display winner's name or tie.
-        Player winner = gameUi.getGame().getLeader();
+        Player winner = gameUi.getGame().getScoring().getLeader();
         Label result = new Label(winner == null
             ? "It's a draw!"
             : String.format("%s wins!", winner.getName()));
@@ -54,7 +54,7 @@ public class EndOfGame {
 
             Label name = new Label(player.getName());
             name.getStyleClass().add("game-over-name");
-            
+
             vbox.getChildren().addAll(score, name);
             hbox.getChildren().add(vbox);
         }

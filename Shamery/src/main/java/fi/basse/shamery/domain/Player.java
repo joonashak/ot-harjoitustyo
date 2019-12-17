@@ -27,9 +27,10 @@ public class Player {
 
     /**
      * Increase score.
+     * Score will not go below zero.
      * @param increase amount to increase.
      */
     public void incScore(int increase) {
-        this.score += increase;
+        score = Math.max(0, score + increase);
     }
 }

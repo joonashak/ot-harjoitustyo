@@ -66,24 +66,6 @@ public class Game {
     }
 
     /**
-     * Get the leading Player.
-     * @return Leading Player or null if tie.
-     */
-    public Player getLeader() {
-        if (players.size() == 1) {
-            return players.get(0);
-        }
-
-        if (players.get(0).getScore() == players.get(1).getScore()) {
-            return null;
-        }
-
-        return players.get(0).getScore() > players.get(1).getScore()
-            ? players.get(0)
-            : players.get(1);
-    }
-
-    /**
      * Hide all cards in the deck.
      */
     public void hideOpenCards() {

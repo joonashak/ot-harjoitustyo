@@ -1,6 +1,9 @@
 package fi.basse.shamery.scoring;
 
+import java.util.List;
+
 import fi.basse.shamery.domain.Game;
+import fi.basse.shamery.domain.Player;
 
 public class TimeScoring implements Scoring {
     Game game;
@@ -18,6 +21,11 @@ public class TimeScoring implements Scoring {
 
     @Override
     public void continueTurn() {
+        // In multiplayer, decrease time score for each match found.
+        if (game.getPlayers().size() == 2) {
+            game.getPlayers().get(inTurn).incScore(-2000);
+        }
+
         // End of game.
         if (game.getDeck().cardsLeft() == 0) {
             update();
@@ -51,5 +59,22 @@ public class TimeScoring implements Scoring {
     @Override
     public int getInTurn() {
         return inTurn;
+    }
+
+    @Override
+    public Player getLeader() {
+        List<Player> players = game.getPlayers();
+
+        if (players.size() == 1) {
+            return players.get(0);
+        }
+
+        if (players.get(0).getScore() == players.get(1).getScore()) {
+            return null;
+        }
+
+        return players.get(0).getScore() < players.get(1).getScore()
+            ? players.get(0)
+            : players.get(1); 
     }
 }

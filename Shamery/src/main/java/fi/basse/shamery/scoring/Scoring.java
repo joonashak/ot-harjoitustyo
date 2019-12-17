@@ -1,6 +1,7 @@
 package fi.basse.shamery.scoring;
 
 import fi.basse.shamery.domain.Game;
+import fi.basse.shamery.domain.Player;
 
 public interface Scoring {
 
@@ -33,4 +34,10 @@ public interface Scoring {
      * @return player index no.
      */
     public int getInTurn();
+
+    /**
+     * Player currently leading the game.
+     * @return Leader or null if tied.
+     */
+    public Player getLeader();
 }

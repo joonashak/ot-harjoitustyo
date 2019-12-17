@@ -1,6 +1,9 @@
 package fi.basse.shamery.scoring;
 
+import java.util.List;
+
 import fi.basse.shamery.domain.Game;
+import fi.basse.shamery.domain.Player;
 
 public class PointScoring implements Scoring {
     Game game;
@@ -35,5 +38,22 @@ public class PointScoring implements Scoring {
     @Override
     public int getInTurn() {
         return inTurn;
+    }
+
+    @Override
+    public Player getLeader() {
+        List<Player> players = game.getPlayers();
+
+        if (players.size() == 1) {
+            return players.get(0);
+        }
+
+        if (players.get(0).getScore() == players.get(1).getScore()) {
+            return null;
+        }
+
+        return players.get(0).getScore() > players.get(1).getScore()
+            ? players.get(0)
+            : players.get(1); 
     }
 }
