@@ -17,7 +17,7 @@ public class Game {
      * Initialize a new Game.
      */
     public Game() {
-        this.deck = new Deck(16);
+        this.deck = new Deck(18);
         this.players = new ArrayList<>();
         this.started = false;
     }
