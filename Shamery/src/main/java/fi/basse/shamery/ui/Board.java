@@ -7,6 +7,7 @@ import javafx.scene.layout.VBox;
 
 public class Board {
     private Game game;
+    private GameUi gameUi;
     private CardGrid cardGrid;
     private Scoreboard scoreboard;
 
@@ -15,6 +16,7 @@ public class Board {
      * @param gameUi Host GameUI instance.
      */
     public Board(GameUi gameUi) {
+        this.gameUi = gameUi;
         this.game = gameUi.getGame();
     }
 
@@ -33,10 +35,16 @@ public class Board {
     /**
      * Update this Board to reflect Game's current state.
      * Should be called after updates to game state are complete.
+     * If update results in end of game, the scene is switched accordingly.
      */
     public void update() {
         cardGrid.update();
         scoreboard.update();
+
+        if (game.isOver()) {
+            EndOfGame eog = new EndOfGame();
+            gameUi.setScene(eog.getScene());
+        }
     }
 
     /**

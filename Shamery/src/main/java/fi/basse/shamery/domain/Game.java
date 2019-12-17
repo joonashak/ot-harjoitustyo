@@ -58,6 +58,14 @@ public class Game {
     }
 
     /**
+     * Check if the game is finished.
+     * @return true if the game is finished.
+     */
+    public boolean isOver() {
+        return deck.cardsLeft() == 0;
+    }
+
+    /**
      * Hide all cards in the deck.
      */
     public void hideOpenCards() {
