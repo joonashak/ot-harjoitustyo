@@ -102,16 +102,18 @@ public class Scoreboard {
         StringBuilder res = new StringBuilder();
         Date date = new Date(score);
 
-        // Show minutes if > 0.
-        if (score < 60 * 1000) {
-            res.append(String.format("%tS", date));
-        } else {
-            res.append(String.format("%tM:%tS", date, date));
+        // Minutes, seconds and deciseconds.
+        int m = score / (1000 * 60);
+        int s = score / 1000;
+        int ds = score % 1000 / 100;
+
+        // Don't show extra ints.
+        if (m < 0) {
+            res.append(String.format("%o:", m));
         }
 
-        // Add tenths.
-        int ms = score % 1000;
-        res.append(String.format(".%d", ms / 100));
+        res.append(m > 0 && s < 10 ? String.format("0%o", s) : s);
+        res.append(String.format(".%d", ds));
 
         return res.toString();
     }

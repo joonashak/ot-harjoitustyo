@@ -48,7 +48,7 @@ public class EndOfGame {
             
             String scoreStr = gameUi.getGame().getScoring() instanceof PointScoring
                 ? Integer.toString(player.getScore())
-                : Scoreboard.timeFromMs(player.getScore());
+                : String.format("%s s", Scoreboard.timeFromMs(player.getScore()));
             Label score = new Label(scoreStr);
             score.getStyleClass().add("game-over-score");
 

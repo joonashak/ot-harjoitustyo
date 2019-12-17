@@ -106,7 +106,7 @@
 }
 
 .game-over-score-grid {
-  -fx-spacing: 20px;
+  -fx-spacing: 50px;
 }
 
 .game-over-score {
