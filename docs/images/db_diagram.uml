@@ -1,0 +1,6 @@
+[Score|rowid: INT; (fk) player_id: INT; (fk) score_type_id: INT; score: INT]
+[Player|rowid: INT; name: TEXT]
+[ScoreType|rowid: INT; name: TEXT;]
+
+[Score]*-1[Player]
+[Score]*-1[ScoreType]

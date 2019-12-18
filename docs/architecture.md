@@ -57,3 +57,11 @@ Example:
   }
 ]
 ```
+
+### Database
+
+SQLite database is used for saving scores and displaying highscores.
+
+![Database Structure](./images/db_diagram.png)
+
+`ScoreType` contains effectively static data, namely the recorded score types with their displayed names as `name`. As the multiplayer scores make little sense when compared over many games, only solo scores are saved.
