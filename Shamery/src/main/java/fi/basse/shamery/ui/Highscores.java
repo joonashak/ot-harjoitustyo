@@ -8,6 +8,7 @@ import fi.basse.shamery.db.ScoreTypeDao;
 import fi.basse.shamery.domain.Player;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -32,7 +33,11 @@ public class Highscores {
         Label title = new Label("Highscores");
         title.getStyleClass().add("title");
 
-        VBox vbox = new VBox(title, highscoreTables());
+        Button backButton = new Button("BACK TO MENU");
+        backButton.getStyleClass().add("button");
+        backButton.setOnAction(e -> gameUi.showMenu());
+
+        VBox vbox = new VBox(title, highscoreTables(), backButton);
         vbox.setId("highscore-view");
         return new Scene(vbox);
     }

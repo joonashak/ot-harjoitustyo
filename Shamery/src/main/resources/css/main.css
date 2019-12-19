@@ -62,6 +62,8 @@
   -fx-font-size: 20px;
   -fx-text-fill: #edf5e1;
   -fx-padding: 5px 30px 5px 30px;
+  -fx-font-family: 'Open Sans';
+  -fx-font-weight: bold;
 }
 
 .button:hover {
@@ -141,6 +143,7 @@
 #highscore-container {
   -fx-spacing: 50px;
   -fx-alignment: center;
+  -fx-padding: 0 0 30px 0;
 }
 
 .title {
