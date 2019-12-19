@@ -1,5 +1,6 @@
 package fi.basse.shamery.ui;
 
+import fi.basse.shamery.db.ScoreDao;
 import fi.basse.shamery.domain.Player;
 import fi.basse.shamery.scoring.PointScoring;
 import javafx.event.EventHandler;
@@ -14,6 +15,16 @@ public class EndOfGame {
 
     public EndOfGame(GameUi gameUi) {
         this.gameUi = gameUi;
+
+        // Calling the constructor implies the game has ended -> save solo scores.
+        if (gameUi.getGame().getPlayers().size() == 1) {
+            try (ScoreDao dao = new ScoreDao()) {
+                dao.save(gameUi.getGame().getScoring());
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("*** ERROR: Failed to save score in db.");
+            }
+        }
     }
     
     public Scene getScene() {
