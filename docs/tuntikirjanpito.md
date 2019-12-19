@@ -23,4 +23,5 @@ Päivä|Aika (h)|Mitä tein?
 14.12.|5|Debuggaus ja tyylimäärittelyt.
 17.12.|6|Refaktorointi, pelilaudan ja tulostaulun tyylit. Pelin loppuminen ja game over -näkymä.
 18.12.|5|Tietokannan käyttöönotto ja dokumentointi.
-**YHT.**|61|
+19.12.|3|Tietokantaa käyttävät luokat ja ennätysten selailun lisääminen peliin.
+**YHT.**|64|

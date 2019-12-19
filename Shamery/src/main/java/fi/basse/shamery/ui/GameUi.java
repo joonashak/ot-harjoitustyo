@@ -61,6 +61,14 @@ public class GameUi extends Application {
     }
 
     /**
+     * Show highscores view.
+     */
+    public void showHighscores() {
+        Highscores hs = new Highscores(this);
+        setScene(hs.getScene());
+    }
+
+    /**
      * Launch this application.
      * @param args CLI arguments.
      */

@@ -30,6 +30,9 @@ public class MainMenu {
         Button mpGameButton = new Button("MULTIPLAYER");
         mpGameButton.setOnAction(e -> gameUi.setUpGame(2));
 
+        Button highscoresButton = new Button("HIGHSCORES");
+        highscoresButton.setOnAction(e -> gameUi.showHighscores());
+
         Button exitButton = new Button("CLOSE");
         exitButton.setOnAction(e -> {
             try {
@@ -41,7 +44,7 @@ public class MainMenu {
         });
 
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(logo, newGameButton, mpGameButton, exitButton);
+        vbox.getChildren().addAll(logo, newGameButton, mpGameButton, highscoresButton, exitButton);
         vbox.getStyleClass().add("menu");
         vbox.setId("main-menu");
 
