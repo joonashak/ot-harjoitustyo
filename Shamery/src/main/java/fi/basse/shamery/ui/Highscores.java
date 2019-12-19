@@ -33,6 +33,7 @@ public class Highscores {
         title.getStyleClass().add("title");
 
         VBox vbox = new VBox(title, highscoreTables());
+        vbox.setId("highscore-view");
         return new Scene(vbox);
     }
 
@@ -42,23 +43,29 @@ public class Highscores {
 
         fetchScoreTypes().forEach((scoreTypeId, scoreTypeName) -> {
             Label tableTitle = new Label(scoreTypeName);
+            tableTitle.getStyleClass().add("hs-table-title");
             List<Player> highscores = fetchHighscores(scoreTypeId);
             GridPane table = new GridPane();
+            table.getStyleClass().add("highscore-table");
 
             for (int i = 0; i < 10; i++) {
-                Label n = new Label(String.format("%o.", i + 1));
+                Label n = new Label(String.format("%s.", i + 1));
+                n.getStyleClass().add("ordinal");
                 table.add(n, 1, i + 1);
 
                 if (i < highscores.size()) {
                     Player player = highscores.get(i);
                     Label name = new Label(player.getName());
+                    name.getStyleClass().add("hs-name");
                     Label score = new Label(String.format("%o", player.getScore()));
+                    score.getStyleClass().add("hs-score");
                     table.add(name, 2, i + 1);
                     table.add(score, 3, i + 1);
                 }
             }
 
             VBox vbox = new VBox(tableTitle, table);
+            vbox.getStyleClass().add("highscore-table-container");
             container.getChildren().add(vbox);
         });
 
