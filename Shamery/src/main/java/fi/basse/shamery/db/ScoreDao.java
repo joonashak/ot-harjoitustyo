@@ -10,6 +10,12 @@ import fi.basse.shamery.scoring.PointScoring;
 import fi.basse.shamery.scoring.Scoring;
 
 public class ScoreDao extends Dao {
+    /**
+     * Create new Database Access Object.
+     * Connection is activated on constructor call and must be closed by calling
+     * Dao.close() once done.
+     * @throws SQLException Thrown on connection fail.
+     */
     public ScoreDao() throws SQLException {
         super();
     }

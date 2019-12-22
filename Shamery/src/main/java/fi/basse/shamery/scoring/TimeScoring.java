@@ -46,6 +46,9 @@ public class TimeScoring implements Scoring {
         this.game = game;
     }
 
+    /**
+     * Update time scores to reflect current time.
+     */
     public void update() {
         if (!game.isStarted()) {
             return;

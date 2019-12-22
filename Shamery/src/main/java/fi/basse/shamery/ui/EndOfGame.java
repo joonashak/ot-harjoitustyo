@@ -13,6 +13,10 @@ import javafx.scene.layout.VBox;
 public class EndOfGame {
     private GameUi gameUi;
 
+    /**
+     * View to announce the end of game and reveal the victor.
+     * @param gameUi Host GameUi instance.
+     */
     public EndOfGame(GameUi gameUi) {
         this.gameUi = gameUi;
 
@@ -27,6 +31,10 @@ public class EndOfGame {
         }
     }
     
+    /**
+     * Scene containing this view.
+     * @return Scene instance.
+     */
     public Scene getScene() {
         VBox vbox = new VBox();
         vbox.setId("game-over");

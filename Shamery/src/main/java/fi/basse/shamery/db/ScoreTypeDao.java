@@ -7,8 +7,10 @@ import java.util.HashMap;
 
 public class ScoreTypeDao extends Dao {
     /**
-     * Default constructor.
-     * @throws SQLException Thrown if database connection fails.
+     * Create new Database Access Object.
+     * Connection is activated on constructor call and must be closed by calling
+     * Dao.close() once done.
+     * @throws SQLException Thrown on connection fail.
      */
     public ScoreTypeDao() throws SQLException {
         super();

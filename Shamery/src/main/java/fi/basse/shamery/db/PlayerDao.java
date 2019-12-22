@@ -5,7 +5,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PlayerDao extends Dao {
-
+    /**
+     * Create new Database Access Object.
+     * Connection is activated on constructor call and must be closed by calling
+     * Dao.close() once done.
+     * @throws SQLException Thrown on connection fail.
+     */
     public PlayerDao() throws SQLException {
         super();
     }
