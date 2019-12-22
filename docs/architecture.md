@@ -2,8 +2,9 @@
 
 ## General Structure
 
-Shamery consists of three main packages:
+Shamery consists of four main packages:
 
+- `fi.basse.shamery.db`: Database utilities.
 - `fi.basse.shamery.domain`: Game logic and object modeling.
 - `fi.basse.shamery.scoring`: Scoring logic, i.e., classes implementing the `Scoring` interface.
 - `fi.basse.shamery.ui`: JavaFX GUI for playing the game.

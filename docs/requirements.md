@@ -11,17 +11,21 @@ The game is local and has no authentication. New users can be added to keep trac
 ## Main Features
 
 ### Menu
-- Start a new game. **[DONE]**
+- Start a new game.
 	- **Game modes:**
-		- Time trial (single/dual) **[DONE]**
-		- Points (single/dual) **[DONE]**
-- Browse highscores and past games.
-- Quit. **[DONE]**
+		- Time trial (single/dual)
+		- Points (single/dual)
+- Browse highscores (only single player scores recorded).
+- Quit.
 
 ### In Game
-- Player(s) can play the game along [the rules](./rules.md). **[DONE]**
-- Points visible. **[DONE]**
+- Player(s) can play the game along [the rules](./rules.md).
+- Points visible.
 - When game ends, the result is saved in the game records.
+
+## Data Persistence
+
+Single player scores are saved in a local database. The database contains unique users and is used to retrieve highscore lists.
 
 ## Future Ideas
 
