@@ -34,14 +34,7 @@ public class MainMenu {
         highscoresButton.setOnAction(e -> gameUi.showHighscores());
 
         Button exitButton = new Button("CLOSE");
-        exitButton.setOnAction(e -> {
-            try {
-                gameUi.stop();
-            } catch (Exception ex) {
-                System.out.println(ex);
-                System.exit(1);
-            }
-        });
+        exitButton.setOnAction(e -> gameUi.cleanStop());
 
         VBox vbox = new VBox();
         vbox.getChildren().addAll(logo, newGameButton, mpGameButton, highscoresButton, exitButton);

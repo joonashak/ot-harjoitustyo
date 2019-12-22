@@ -24,6 +24,18 @@ public class GameUi extends Application {
     }
 
     /**
+     * GameUi.stop() that does not throw.
+     */
+    public void cleanStop() {
+        try {
+            this.stop();
+        } catch (Exception ex) {
+            System.out.println(ex);
+            System.exit(1);
+        }
+    }
+
+    /**
      * Change active Scene of this GameUI.
      * @param scene Scene to be shown.
      */

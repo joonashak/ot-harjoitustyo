@@ -54,19 +54,7 @@ public class Highscores {
             table.getStyleClass().add("highscore-table");
 
             for (int i = 0; i < 10; i++) {
-                Label n = new Label(String.format("%s.", i + 1));
-                n.getStyleClass().add("ordinal");
-                table.add(n, 1, i + 1);
-
-                if (i < highscores.size()) {
-                    Player player = highscores.get(i);
-                    Label name = new Label(player.getName());
-                    name.getStyleClass().add("hs-name");
-                    Label score = new Label(String.format("%o", player.getScore()));
-                    score.getStyleClass().add("hs-score");
-                    table.add(name, 2, i + 1);
-                    table.add(score, 3, i + 1);
-                }
+                highscoreRow(i, table, highscores);
             }
 
             VBox vbox = new VBox(tableTitle, table);
@@ -75,6 +63,22 @@ public class Highscores {
         });
 
         return container;
+    }
+
+    private void highscoreRow(int i, GridPane table, List<Player> highscores) {
+        Label n = new Label(String.format("%s.", i + 1));
+        n.getStyleClass().add("ordinal");
+        table.add(n, 1, i + 1);
+
+        if (i < highscores.size()) {
+            Player player = highscores.get(i);
+            Label name = new Label(player.getName());
+            name.getStyleClass().add("hs-name");
+            Label score = new Label(String.format("%o", player.getScore()));
+            score.getStyleClass().add("hs-score");
+            table.add(name, 2, i + 1);
+            table.add(score, 3, i + 1);
+        }
     }
 
     private List<Player> fetchHighscores(int scoreTypeId) {

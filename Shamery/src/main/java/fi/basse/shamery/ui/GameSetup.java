@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import fi.basse.shamery.domain.Player;
 import fi.basse.shamery.scoring.PointScoring;
+import fi.basse.shamery.scoring.Scoring;
 import fi.basse.shamery.scoring.TimeScoring;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -38,43 +39,18 @@ public class GameSetup {
 
         Label prompt = new Label("Enter your name...");
 
-        // One or two input fields for names.
-        GridPane nameGrid = new GridPane();
-        nameGrid.setId("name-grid");
-
-        for (int i = 1; i <= noPlayers; i++) {
-            Label label = new Label(String.format("Player %s", i));
-            TextField tf = new TextField(String.format("Player %s", i));
-            nameFields.add(tf);
-            nameGrid.add(label, 1, i);
-            nameGrid.add(tf, 2, i);
-        }
-
         // Buttons for each game type.
         Label selectPrompt = new Label("...and select a game mode:");
 
-        Button pointsGameButton = new Button("POINTS GAME");
-        pointsGameButton.setId("points-game-button");
-        pointsGameButton.setMinWidth(200);
-        pointsGameButton.setOnAction(e -> {
-            addNames();
-            gameUi.newGame(new PointScoring());
-        });
-
-        Button timeTrialButton = new Button("TIME TRIAL");
-        timeTrialButton.setId("time-trial-button");
-        timeTrialButton.setMinWidth(200);
-        timeTrialButton.setOnAction(e -> {
-            addNames();
-            gameUi.newGame(new TimeScoring());
-        });
+        Button pointsGameButton = gameButton("POINTS GAME", "points-game-button", new PointScoring());
+        Button timeTrialButton = gameButton("TIME TRIAL", "time-trial-button", new TimeScoring());
 
         HBox startButtons = new HBox();
         startButtons.getChildren().addAll(pointsGameButton, timeTrialButton);
         startButtons.setId("game-button-container");
 
         VBox vbox = new VBox(10);
-        vbox.getChildren().addAll(logo, prompt, nameGrid, selectPrompt, startButtons);
+        vbox.getChildren().addAll(logo, prompt, nameGrid(), selectPrompt, startButtons);
         vbox.getStyleClass().add("menu");
 
         return new Scene(vbox);
@@ -88,5 +64,33 @@ public class GameSetup {
             Player player = new Player(tf.getText());
             gameUi.getGame().addPlayer(player);
         }
+    }
+
+    private GridPane nameGrid() {
+        // One or two input fields for names.
+        GridPane gp = new GridPane();
+        gp.setId("name-grid");
+
+        for (int i = 1; i <= noPlayers; i++) {
+            Label label = new Label(String.format("Player %s", i));
+            TextField tf = new TextField(String.format("Player %s", i));
+            nameFields.add(tf);
+            gp.add(label, 1, i);
+            gp.add(tf, 2, i);
+        }
+
+        return gp;
+    }
+
+    private Button gameButton(String label, String id, Scoring scoring) {
+        Button gameButton = new Button(label);
+        gameButton.setId(id);
+        gameButton.setMinWidth(200);
+        gameButton.setOnAction(e -> {
+            addNames();
+            gameUi.newGame(scoring);
+        });
+
+        return gameButton;
     }
 }
