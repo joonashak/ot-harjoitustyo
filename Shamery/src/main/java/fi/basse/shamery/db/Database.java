@@ -64,4 +64,11 @@ public class Database {
             throw e;
         }
     }
+
+    /**
+     * Delete the database file corresponding to this object.
+     */
+    public void deleteDbFile() {
+        new File(dbPath).delete();
+    }
 }

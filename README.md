@@ -36,8 +36,6 @@ Generate executable JAR with dependencies:
 mvn package
 ```
 
-> **NOTE:** Current tests have a design flaw due to which they may fail sometimes. If this blocks `mvn package` from completing, simply rerunning the command should suffice. (This notice is here in case I don't have time to fix the issue before this week's deadline.)
-
 ### Testing
 
 Run unit tests:

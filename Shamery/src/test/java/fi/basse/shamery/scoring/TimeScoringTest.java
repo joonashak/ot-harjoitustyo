@@ -52,6 +52,7 @@ public class TimeScoringTest {
     @Test
     public void singleTimerRecordedAtGameEnd() {
         ts.startTurn();
+        sleep();
 
         // Mark all cards as removed to cause game to end.
         for (Card c : game.getDeck().getCards()) {

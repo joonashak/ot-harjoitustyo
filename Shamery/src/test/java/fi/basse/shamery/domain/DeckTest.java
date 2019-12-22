@@ -34,4 +34,12 @@ public class DeckTest {
         assertEquals(2, small.getCards().size());
         assertEquals(64, large.getCards().size());
     }
+
+    @Test
+    public void getOpenCardsOk() {
+        deck.getCards().get(0).remove();
+        deck.getCards().get(0).setRevealed(true);
+        deck.getCards().get(1).setRevealed(true);
+        assertEquals(1, deck.getOpenCards().size());
+    }
 }
