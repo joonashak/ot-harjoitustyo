@@ -16,6 +16,8 @@ Shamery is a concentration-type game where the players try to match up two shape
 
 [Architecture](docs/architecture.md)
 
+[Testing Documentation](docs/testing.md)
+
 [Työaikakirjanpito](docs/tuntikirjanpito.md) (hour tracking, in Finnish)
 
 ## Usage
